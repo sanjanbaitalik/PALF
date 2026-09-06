@@ -1,0 +1,15 @@
+{
+  "task": "working_memory",
+  "splits_reconstructed": 50,
+  "total_splits_requested": 50,
+  "max_prediction_reproduction_error": 0.0,
+  "mean_prediction_reproduction_error": 0.0,
+  "coefficients_shape": [
+    50,
+    6670
+  ],
+  "all_finite": true,
+  "elapsed_seconds": 15.981300830841064,
+  "output_dir": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/outputs/iclr/lf1_final_10x5/frozen_fp_coefficients/working_memory",
+  "smoke_mode": false
+}

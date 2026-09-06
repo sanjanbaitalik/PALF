@@ -1,0 +1,15 @@
+{
+  "task": "working_memory",
+  "splits_reconstructed": 1,
+  "total_splits_requested": 1,
+  "max_prediction_reproduction_error": 0.0,
+  "mean_prediction_reproduction_error": 0.0,
+  "coefficients_shape": [
+    1,
+    6670
+  ],
+  "all_finite": true,
+  "elapsed_seconds": 0.6476678848266602,
+  "output_dir": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/outputs/iclr/lf1_final_10x5/frozen_fp_coefficients_smoke/working_memory",
+  "smoke_mode": true
+}

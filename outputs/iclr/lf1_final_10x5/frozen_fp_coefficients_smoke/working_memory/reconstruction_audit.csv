@@ -1,0 +1,2 @@
+task,seed,outer_fold,n_train,n_test,w_fp,w_s,prediction_max_abs_error,prediction_mean_abs_error,prediction_rmse_difference,prediction_pearson,stored_lf1_pearson,reconstructed_lf1_pearson,pearson_abs_error,stored_lf1_rmse,reconstructed_lf1_rmse,rmse_abs_error,stored_lf1_mae,reconstructed_lf1_mae,mae_abs_error,coefficient_length,coefficient_finite,status
+working_memory,0,0,329,83,0.65,0.35,0.0,0.0,0.0,1.0,0.11665833081095538,0.11665833081095538,0.0,11.300936014691928,11.300936014691928,0.0,9.117385776032616,9.117385776032616,0.0,6670,True,PASS
