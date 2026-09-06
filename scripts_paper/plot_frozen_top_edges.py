@@ -66,7 +66,7 @@ def main():
         raise ValueError(f"--top-k must be between 1 and {N_EDGE}")
 
     edge_df = pd.read_csv(args.edge_summary)
-    required_cols = {"mean_abs_coef", "roi_i_1based", "roi_j_1based"}
+    required_cols = {"mean_abs_coef", "mean_signed_coef", "roi_i_1based", "roi_j_1based"}
     missing = required_cols - set(edge_df.columns)
     if missing:
         raise ValueError(f"Missing columns: {missing}")
@@ -131,7 +131,11 @@ def main():
             "rank": rank,
             "roi_i_1based": int(row["roi_i_1based"]),
             "roi_j_1based": int(row["roi_j_1based"]),
+            "roi_i_name": str(row.get("roi_i_name", "")),
+            "roi_j_name": str(row.get("roi_j_name", "")),
             "mean_abs_coef": float(row["mean_abs_coef"]),
+            "mean_signed_coef": float(row["mean_signed_coef"]),
+            "top20_frequency": float(row.get("top20_frequency", 0.0)),
             "sign_consistency": float(row.get("sign_consistency", 0.0)),
             "top10_frequency": float(row.get("top10_frequency", 0.0)),
         })

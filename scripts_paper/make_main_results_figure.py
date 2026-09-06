@@ -38,6 +38,13 @@ LABEL_SIZE = 8
 MARKER_SIZE = 28
 
 CONDITION_ORDER = ["No prior", "Matched", "Unrelated", "Shuffled", "Random"]
+DISPLAY_LABELS = {
+    "No prior": "No prior",
+    "Matched": "Matched",
+    "Unrelated": "Cross-task",
+    "Shuffled": "Shuffled",
+    "Random": "Random",
+}
 
 
 def normalize_model(name):
@@ -110,6 +117,7 @@ def panel_prediction(ax, delta: pd.Series, task_label: str, panel_letter: str):
     ax.set_xticklabels([str(int(s)) for s in delta.index], fontsize=TICK_SIZE)
     ax.tick_params(axis="y", labelsize=TICK_SIZE)
     ax.set_title(f"({panel_letter}) {task_label}", fontsize=FONT_SIZE, fontweight="bold", pad=4)
+    ax.set_ylim(-0.015, 0.060)
     ax.margins(x=0.05)
     for spine in ax.spines.values():
         spine.set_linewidth(0.5)
@@ -133,10 +141,12 @@ def panel_biomarker(ax, bio_df: pd.DataFrame, task_label: str, panel_letter: str
     )
     ax.axhline(0.0, linewidth=0.7, color="gray")
     ax.set_xticks(x)
-    ax.set_xticklabels(stats.index, rotation=28, ha="right", fontsize=TICK_SIZE)
-    ax.set_ylabel("Alignment with matched-task prior", fontsize=LABEL_SIZE)
+    display_names = [DISPLAY_LABELS.get(idx, idx) for idx in stats.index]
+    ax.set_xticklabels(display_names, rotation=28, ha="right", fontsize=TICK_SIZE)
+    ax.set_ylabel(r"ROI-prior alignment (Spearman $\rho$)", fontsize=LABEL_SIZE)
     ax.tick_params(axis="y", labelsize=TICK_SIZE)
     ax.set_title(f"({panel_letter}) {task_label}", fontsize=FONT_SIZE, fontweight="bold", pad=4)
+    ax.set_ylim(-0.15, 0.85)
     ax.margins(x=0.04)
     for spine in ax.spines.values():
         spine.set_linewidth(0.5)
@@ -175,7 +185,7 @@ def main():
         if len(vals) > 0:
             print(f"  FI {cond:10s}: mean={vals.mean():.4f}")
 
-    # Create 2x2 figure (full-width two-column ICLR)
+    # Create 2x2 figure at ICLR text width (~7.0 in)
     fig, axes = plt.subplots(2, 2, figsize=(7.0, 5.5))
 
     panel_prediction(axes[0, 0], wm_delta, "Working Memory", "a")

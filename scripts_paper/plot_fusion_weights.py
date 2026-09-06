@@ -405,7 +405,7 @@ def plot_weights(
         figsize=(3.15, 2.05)
     )
 
-    ax.hist(
+    counts, _, patches = ax.hist(
         w.to_numpy(),
         bins=bins,
     )
@@ -426,12 +426,17 @@ def plot_weights(
     )
 
     ax.set_xlabel(
-        "Prior-aware FC fusion weight"
+        "Prior-aware FC weight w_FP"
     )
 
     ax.set_ylabel(
         "Outer splits"
     )
+
+    # Integer y-ticks; use 15 as shared upper bound for both tasks
+    y_max = 15
+    ax.set_yticks(range(0, y_max + 1))
+    ax.set_ylim(0, y_max)
 
     ax.legend(
         frameon=False,

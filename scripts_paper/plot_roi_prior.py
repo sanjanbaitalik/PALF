@@ -3,6 +3,7 @@
 from pathlib import Path
 import argparse
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import nibabel as nib
@@ -332,13 +333,26 @@ def main():
         exist_ok=True,
     )
 
+    fig_prior = plt.figure(figsize=(7.0, 1.8))
     display = plotting.plot_stat_map(
         stat_img,
         display_mode="z",
-        cut_coords=7,
+        cut_coords=[-54, -30, -8, 6, 24, 38, 56, 72],
         threshold=0,
+        vmin=0,
+        vmax=1,
+        symmetric_cbar=False,
         colorbar=True,
+        figure=fig_prior,
     )
+
+    if display.axes:
+        for ax in display.axes:
+            if hasattr(ax, 'figure') and ax.figure is not None:
+                for cbar_ax in ax.figure.axes:
+                    if cbar_ax != ax and hasattr(cbar_ax, 'set_label'):
+                        cbar_ax.set_label("Prior score")
+                        break
 
     display.savefig(
         str(output)
