@@ -1,0 +1,19 @@
+{
+  "production_complete": true,
+  "n_primary_rows": 400,
+  "n_conditions": 4,
+  "n_wm_splits": 200,
+  "n_fi_splits": 200,
+  "frozen_unchanged": true,
+  "tests_passed": true,
+  "hyperparameters_extracted": true,
+  "branch_fusion_summary_extracted": true,
+  "oof_predictions_saved": true,
+  "outer_predictions_saved": true,
+  "stability_computed": true,
+  "biomarker_alignment_computed": true,
+  "coefficients_saved": false,
+  "coefficients_note": "FC/SC coefficients not stored in checkpoint; would require refitting",
+  "latex_tables_generated": true,
+  "run_report_updated": true
+}

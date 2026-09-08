@@ -1,0 +1,34 @@
+{
+  "production_complete": true,
+  "all_400_primary_rows_present": true,
+  "strict_oof_preprocessing_and_selection_verified": true,
+  "final_branch_reselection_verified": true,
+  "outer_test_exclusion_verified": true,
+  "same_solver_scale_verified": true,
+  "all_four_component_conditions_evaluated": true,
+  "coefficients_and_stability_verified": true,
+  "frozen_artifacts_unchanged": true,
+  "ready_for_corrected_protocol_figure": true,
+  "evidence_paths": {
+    "outer_metrics": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/outputs/iclr/palf_crossfit_ablation_v1/*/outer_metrics.csv",
+    "seed_metrics": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/outputs/iclr/palf_crossfit_ablation_v1/*/seed_metrics.csv",
+    "validation_report": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/outputs/iclr/palf_crossfit_ablation_v1/validation_report.json"
+  },
+  "immutable_figure_facts": {
+    "atlas": "AAL116",
+    "n_edges": 6670,
+    "c_scale": 13340,
+    "model_display": "Qwen3.8-27B",
+    "roi_prior": "p",
+    "edge_prior": "q = p_i * p_j",
+    "gamma": 0.5,
+    "line_graph": "L_p (top-10 ROI binary normalized)",
+    "fc_only_prior": true,
+    "sc_branch": "Ordinary Ridge",
+    "cross_fitting": "Nested branch-level",
+    "fusion": "Convex two-branch",
+    "final_reselection": "Separate 3-fold CV on full T",
+    "r0_control": "Same-solver D=I, lambda_L=0",
+    "biomarkers": "Unfused beta_FP"
+  }
+}

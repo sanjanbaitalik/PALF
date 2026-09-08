@@ -1,0 +1,66 @@
+{
+  "experiment": "PALF Cross-Fitted Ablation",
+  "fingerprint": "e0665e0f612ccdf4",
+  "conditions": {
+    "R0": {
+      "id": "R0",
+      "name": "Same-solver no prior",
+      "use_anisotropy": false,
+      "use_network": false,
+      "lambda_l_grid": [
+        0.0
+      ]
+    },
+    "R1": {
+      "id": "R1",
+      "name": "Anisotropy only",
+      "use_anisotropy": true,
+      "use_network": false,
+      "lambda_l_grid": [
+        0.0
+      ]
+    },
+    "R2": {
+      "id": "R2",
+      "name": "Network only",
+      "use_anisotropy": false,
+      "use_network": true,
+      "lambda_l_grid": [
+        0.03,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0
+      ]
+    },
+    "R3": {
+      "id": "R3",
+      "name": "Full PALF",
+      "use_anisotropy": true,
+      "use_network": true,
+      "lambda_l_grid": [
+        0.03,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0
+      ]
+    }
+  },
+  "ridge_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "fusion_weight_step": 0.05,
+  "selection_rule": "Pearson first, RMSE tiebreak, MAE tiebreak, larger SC weight on exact tie",
+  "fusion_selection_rule": "Pearson first, RMSE tiebreak, MAE tiebreak",
+  "cross_fitting": "Each OOF prediction excludes held-out subjects from preprocessing, selection, and fitting",
+  "final_reselection": "3-fold CV on full outer-training set",
+  "solver_scale": "C = 2 * N_EDGE = 13340"
+}

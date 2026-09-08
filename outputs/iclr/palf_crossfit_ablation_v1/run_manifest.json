@@ -1,0 +1,90 @@
+{
+  "config": {
+    "experiment_name": "palf_crossfit_ablation_v1",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "fusion_folds": 3,
+    "final_cv_folds": 3,
+    "n_rois": 116,
+    "data": {
+      "fc_path": "inputs/dataset_FC/FC_all.npy",
+      "sc_path": "inputs/dataset_SC/SC_all.npy",
+      "y_path": "inputs/dataset_SC/label_all.npy",
+      "subjects_path": "inputs/dataset_SC/hcp_subjects_used.csv"
+    },
+    "ridge_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "lambda_l_grid_no_network": [
+      0.0
+    ],
+    "lambda_l_grid_network": [
+      0.03,
+      0.1,
+      0.5,
+      1.0,
+      2.0,
+      5.0
+    ],
+    "targets": {
+      "working_memory": {
+        "name": "Working Memory (ListSort_Unadj)",
+        "label_path": "inputs/dataset_SC/task_labels/ListSort_Unadj/label_all.npy"
+      },
+      "fluid_intelligence": {
+        "name": "Fluid Intelligence (PMAT24_A_CR)",
+        "label_path": "inputs/dataset_SC/label_all.npy"
+      }
+    },
+    "priors": {
+      "working_memory": {
+        "matched": "outputs/priors/llm/working_memory_contrastive_qwen3/roi_prior.csv",
+        "unrelated": "outputs/priors/llm/fluid_intelligence_contrastive_qwen3/roi_prior.csv",
+        "shuffled": "outputs/priors/llm/working_memory_contrastive_qwen3_shuffled/roi_prior.csv",
+        "random": "outputs/priors/random_prior/aal116/roi_prior.csv"
+      },
+      "fluid_intelligence": {
+        "matched": "outputs/priors/llm/fluid_intelligence_contrastive_qwen3/roi_prior.csv",
+        "unrelated": "outputs/priors/llm/working_memory_contrastive_qwen3/roi_prior.csv",
+        "shuffled": "outputs/priors/llm/fluid_intelligence_contrastive_qwen3_shuffled/roi_prior.csv",
+        "random": "outputs/priors/random_prior/aal116/roi_prior.csv"
+      }
+    },
+    "conditions": [
+      "R0",
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "output_base": "outputs/iclr/palf_crossfit_ablation_v1",
+    "smoke_output_base": "outputs/iclr/palf_crossfit_ablation_smoke"
+  },
+  "fingerprint": "e0665e0f612ccdf4",
+  "data_hashes": {
+    "fc": "6258fec0893ca802",
+    "sc": "ca63944dd5212f57",
+    "working_memory": "0d29835087d5b831",
+    "fluid_intelligence": "dbec13c037759629"
+  },
+  "start_time": "2026-09-06T21:16:57",
+  "python_version": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:24:48) [GCC 14.3.0]",
+  "numpy_version": "2.4.6",
+  "pid": 2445833
+}
