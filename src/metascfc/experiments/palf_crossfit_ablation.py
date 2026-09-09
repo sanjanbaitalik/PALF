@@ -800,24 +800,15 @@ def evaluate_ablation_split(
     )
 
     # Step 2: Fusion weight selection on OOF
-    # R0 fuses FC+SC (no-prior FC); R1/R2/R3 fuse FP+SC (prior-aware FC)
+    # ALL four primary conditions use FP + SC fusion (generalized FC branch).
+    # R0 uses no-prior FP (D=I, lambda_L=0) + SC.
     y_train = y[train_idx]
-    if condition.use_anisotropy or condition.use_network:
-        # R1/R2/R3: use FP (prior-aware) + SC fusion
-        fusion_weights, fusion_pearson = search_fusion_weights(
-            y_train, {"FP": oof.fp_oof, "SC": oof.sc_oof}, ["FP", "SC"],
-        )
-    else:
-        # R0: use FC (no-prior) + SC fusion
-        fusion_weights, fusion_pearson = search_fusion_weights(
-            y_train, {"FC": oof.fc_oof, "SC": oof.sc_oof}, ["FC", "SC"],
-        )
+    fusion_weights, fusion_pearson = search_fusion_weights(
+        y_train, {"FP": oof.fp_oof, "SC": oof.sc_oof}, ["FP", "SC"],
+    )
 
-    # Equal-weight baseline
-    if condition.use_anisotropy or condition.use_network:
-        ew_pred = 0.5 * oof.fp_oof + 0.5 * oof.sc_oof
-    else:
-        ew_pred = 0.5 * oof.fc_oof + 0.5 * oof.sc_oof
+    # Equal-weight baseline: all four conditions use FP + SC
+    ew_pred = 0.5 * oof.fp_oof + 0.5 * oof.sc_oof
     ew_pearson = float(pearsonr(y_train, ew_pred).statistic) if len(y_train) > 1 else 0.0
 
     # Step 3: Final reselection and fit
@@ -826,23 +817,13 @@ def evaluate_ablation_split(
         seed, outer_fold, ridge_grid, n_final_cv, n_rois,
     )
 
-    # Step 4: Fused test prediction
-    if condition.use_anisotropy or condition.use_network:
-        # R1/R2/R3: FP + SC
-        w_fp = fusion_weights.get("FP", 0.5)
-        w_sc = fusion_weights.get("SC", 0.5)
-        fused_test = w_fp * fp_final.test_pred + w_sc * sc_final.test_pred
-    else:
-        # R0: FC + SC
-        w_fc = fusion_weights.get("FC", 0.5)
-        w_sc = fusion_weights.get("SC", 0.5)
-        fused_test = w_fc * fc_final.test_pred + w_sc * sc_final.test_pred
+    # Step 4: Fused test prediction — all conditions use FP + SC
+    w_fp = fusion_weights["FP"]
+    w_sc = fusion_weights["SC"]
+    fused_test = w_fp * fp_final.test_pred + w_sc * sc_final.test_pred
 
-    # Equal-weight test prediction
-    if condition.use_anisotropy or condition.use_network:
-        ew_test = 0.5 * fp_final.test_pred + 0.5 * sc_final.test_pred
-    else:
-        ew_test = 0.5 * fc_final.test_pred + 0.5 * sc_final.test_pred
+    # Equal-weight test prediction — all conditions use FP + SC
+    ew_test = 0.5 * fp_final.test_pred + 0.5 * sc_final.test_pred
 
     # Compute metrics
     fc_m = prediction_metrics(y_test, fc_final.test_pred)

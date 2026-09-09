@@ -1,0 +1,3 @@
+task,task_display,condition_1,condition_2,model,metric,mean_condition_1,mean_condition_2,mean_difference,std_difference,cohens_dz,positive_seeds,n_seeds,wilcoxon_statistic,raw_p,ci_95_lower,ci_95_upper,p_holm,significant_holm_005
+working_memory,Working Memory,Full PALF,Same-solver no prior,fused,Pearson r,0.26249975212135696,0.2635147735902435,-0.0010150214688864983,0.014353837065281747,-0.07071429501882637,6,10,27.0,1.0,-0.009768855820076491,0.0069610594257183776,1.0,False
+fluid_intelligence,Fluid Intelligence,Full PALF,Same-solver no prior,fused,Pearson r,0.3700313844593241,0.3709173349695604,-0.0008859505102362497,0.007026682784181359,-0.12608374925231053,4,10,22.0,0.625,-0.004798120448622241,0.0034213175067011126,1.0,False

@@ -1,0 +1,4 @@
+Freeze v2 (same-solver corrected) build completed at 2026-09-09T13:19:40
+Script: scripts_paper/build_freeze_v2_same_solver.py
+R0 fusion corrected: FP+SC (no FC in any condition)
+Prior-control refits: loaded from v1 freeze (R3 unchanged)

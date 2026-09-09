@@ -129,8 +129,8 @@ def refit_control_prior(
     fp_test = fp_test_z * y_std + y_mean
 
     # Fuse with fixed SC
-    w_fp = fusion_weights.get("FP", 0.5)
-    w_sc = fusion_weights.get("SC", 0.5)
+    w_fp = fusion_weights["FP"]
+    w_sc = fusion_weights["SC"]
     fused_test = w_fp * fp_test + w_sc * sc_test_pred
 
     y_test = y[test_idx]
@@ -226,8 +226,8 @@ def main():
                     "fused_mae_matched": s.fused_metrics["mae"],
                     "fused_mae_control": refit["fused_metrics"]["mae"],
                     # Fusion weights (fixed from R3)
-                    "w_fp": s.fusion_weights.get("FP", 0.5),
-                    "w_sc": s.fusion_weights.get("SC", 0.5),
+                    "w_fp": s.fusion_weights["FP"],
+                    "w_sc": s.fusion_weights["SC"],
                 })
                 refit_count += 1
 

@@ -2,7 +2,7 @@
 """Validations for the PALF manuscript freeze bundle (freeze_id 9abbb56).
 
 Tests verify:
-  - Fusion weight schema integrity (FP/SC and FC/SC keys, no silent fallback)
+  - Fusion weight schema integrity (FP/SC keys for all conditions, no silent fallback)
   - CSV schemas and row counts
   - Prior-control matched-reference fidelity
   - Seed-level aggregation counts
@@ -39,7 +39,7 @@ def _skip_if_no_output_base():
 
 
 # ---------------------------------------------------------------------------
-# 1. Full PALF fusion dictionary requires keys "FP" and "SC"
+# 1. Full PALF fusion dictionary requires keys "FP" and "SC" for all conditions
 # ---------------------------------------------------------------------------
 class TestFusionRequiresFPSCKeys:
     def test_fusion_requires_fp_sc_keys(self):
@@ -68,31 +68,159 @@ class TestFusionRequiresFPSCKeys:
 
 
 # ---------------------------------------------------------------------------
-# 2. Same-solver no-prior fusion requires keys "FC" and "SC"
+# 2. All conditions (R0/R1/R2/R3) use FP+SC fusion
 # ---------------------------------------------------------------------------
-class TestFusionRequiresFCSCKeys:
-    def test_fusion_requires_fc_sc_keys(self):
-        """R0 (same-solver no prior) splits must carry 'FC' and 'SC' keys."""
+class TestFusionRequiresFPSCKeysForAll:
+    def test_fusion_requires_fp_sc_for_all_conditions(self):
+        """Every condition (R0, R1, R2, R3) must carry 'FP' and 'SC' fusion keys."""
         _skip_if_no_output_base()
         import pickle
 
+        # Check corrected v2 checkpoints (source checkpoint still has old R0 fusion)
+        corrected_base = REPO_ROOT / "outputs/iclr/palf_same_solver_fusion_corrected_v2"
+        if not corrected_base.exists():
+            pytest.skip(f"Corrected v2 directory not found: {corrected_base}")
+
         for task in ["working_memory", "fluid_intelligence"]:
-            ckpt_path = OUTPUT_BASE / task / "checkpoint.pkl"
+            ckpt_path = corrected_base / task / "checkpoint.pkl"
+            if not ckpt_path.exists():
+                pytest.skip(f"Corrected checkpoint not found: {ckpt_path}")
+            with open(ckpt_path, "rb") as f:
+                ckpt = pickle.load(f)
+            for condition_id in ["R0", "R1", "R2", "R3"]:
+                splits = [s for s in ckpt.splits if s.condition_id == condition_id]
+                assert len(splits) > 0, f"No {condition_id} splits found for {task}"
+                for s in splits:
+                    fw = s.fusion_weights
+                    assert "FP" in fw, (
+                        f"{condition_id} split task={task} seed={s.seed} fold={s.outer_fold} "
+                        f"missing 'FP' key; keys={list(fw.keys())}"
+                    )
+                    assert "SC" in fw, (
+                        f"{condition_id} split task={task} seed={s.seed} fold={s.outer_fold} "
+                        f"missing 'SC' key; keys={list(fw.keys())}"
+                    )
+
+
+# ---------------------------------------------------------------------------
+# 2b. R0 correction did not modify FP/SC predictions
+# ---------------------------------------------------------------------------
+class TestR0CorrectionPreservesPredictions:
+    def test_r0_correction_does_not_modify_fp_predictions(self):
+        """R0 correction must not change stored FP branch predictions."""
+        _skip_if_no_output_base()
+        import pickle
+
+        src_base = OUTPUT_BASE  # original v1
+        corrected_base = REPO_ROOT / "outputs/iclr/palf_same_solver_fusion_corrected_v2"
+        if not corrected_base.exists():
+            pytest.skip("Corrected v2 directory not found")
+
+        for task in ["working_memory", "fluid_intelligence"]:
+            src_path = src_base / task / "checkpoint.pkl"
+            crr_path = corrected_base / task / "checkpoint.pkl"
+            if not src_path.exists() or not crr_path.exists():
+                pytest.skip(f"Checkpoints not found for {task}")
+            with open(src_path, "rb") as f:
+                src_ckpt = pickle.load(f)
+            with open(crr_path, "rb") as f:
+                crr_ckpt = pickle.load(f)
+
+            src_r0 = [s for s in src_ckpt.splits if s.condition_id == "R0"]
+            crr_r0 = [s for s in crr_ckpt.splits if s.condition_id == "R0"]
+            assert len(src_r0) == len(crr_r0)
+
+            for s, c in zip(src_r0, crr_r0):
+                assert np.allclose(s.fp_test_pred, c.fp_test_pred), (
+                    f"R0 FP test_pred changed for {task} seed={s.seed} fold={s.outer_fold}"
+                )
+
+    def test_r0_correction_does_not_modify_sc_predictions(self):
+        """R0 correction must not change stored SC branch predictions."""
+        _skip_if_no_output_base()
+        import pickle
+
+        src_base = OUTPUT_BASE
+        corrected_base = REPO_ROOT / "outputs/iclr/palf_same_solver_fusion_corrected_v2"
+        if not corrected_base.exists():
+            pytest.skip("Corrected v2 directory not found")
+
+        for task in ["working_memory", "fluid_intelligence"]:
+            src_path = src_base / task / "checkpoint.pkl"
+            crr_path = corrected_base / task / "checkpoint.pkl"
+            if not src_path.exists() or not crr_path.exists():
+                pytest.skip(f"Checkpoints not found for {task}")
+            with open(src_path, "rb") as f:
+                src_ckpt = pickle.load(f)
+            with open(crr_path, "rb") as f:
+                crr_ckpt = pickle.load(f)
+
+            src_r0 = [s for s in src_ckpt.splits if s.condition_id == "R0"]
+            crr_r0 = [s for s in crr_ckpt.splits if s.condition_id == "R0"]
+            for s, c in zip(src_r0, crr_r0):
+                assert np.allclose(s.sc_test_pred, c.sc_test_pred), (
+                    f"R0 SC test_pred changed for {task} seed={s.seed} fold={s.outer_fold}"
+                )
+
+    def test_r1_r2_r3_unchanged(self):
+        """R1/R2/R3 source results must be unchanged after R0 correction."""
+        _skip_if_no_output_base()
+        import pickle
+
+        src_base = OUTPUT_BASE
+        corrected_base = REPO_ROOT / "outputs/iclr/palf_same_solver_fusion_corrected_v2"
+        if not corrected_base.exists():
+            pytest.skip("Corrected v2 directory not found")
+
+        for task in ["working_memory", "fluid_intelligence"]:
+            src_path = src_base / task / "checkpoint.pkl"
+            crr_path = corrected_base / task / "checkpoint.pkl"
+            if not src_path.exists() or not crr_path.exists():
+                pytest.skip(f"Checkpoints not found for {task}")
+            with open(src_path, "rb") as f:
+                src_ckpt = pickle.load(f)
+            with open(crr_path, "rb") as f:
+                crr_ckpt = pickle.load(f)
+
+            for cond in ["R1", "R2", "R3"]:
+                src_cond = [s for s in src_ckpt.splits if s.condition_id == cond]
+                crr_cond = [s for s in crr_ckpt.splits if s.condition_id == cond]
+                assert len(src_cond) == len(crr_cond)
+                for s, c in zip(src_cond, crr_cond):
+                    assert np.allclose(s.fused_test_pred, c.fused_test_pred), (
+                        f"{cond} fused_test_pred changed for {task} "
+                        f"seed={s.seed} fold={s.outer_fold}"
+                    )
+
+
+# ---------------------------------------------------------------------------
+# 2c. Corrected R0 fusion weights sum to 1.0
+# ---------------------------------------------------------------------------
+class TestCorrectedR0FusionWeightsSumToOne:
+    def test_corrected_r0_weights_sum_to_one(self):
+        """Corrected R0 fusion weights must satisfy w_FP + w_SC = 1."""
+        _skip_if_no_output_base()
+        import pickle
+
+        corrected_base = REPO_ROOT / "outputs/iclr/palf_same_solver_fusion_corrected_v2"
+        if not corrected_base.exists():
+            pytest.skip("Corrected v2 directory not found")
+
+        for task in ["working_memory", "fluid_intelligence"]:
+            ckpt_path = corrected_base / task / "checkpoint.pkl"
             if not ckpt_path.exists():
                 pytest.skip(f"Checkpoint not found: {ckpt_path}")
             with open(ckpt_path, "rb") as f:
                 ckpt = pickle.load(f)
+
             r0_splits = [s for s in ckpt.splits if s.condition_id == "R0"]
-            assert len(r0_splits) > 0, f"No R0 splits found for {task}"
+            assert len(r0_splits) == 50
             for s in r0_splits:
                 fw = s.fusion_weights
-                assert "FC" in fw, (
-                    f"R0 split task={task} seed={s.seed} fold={s.outer_fold} "
-                    f"missing 'FC' key; keys={list(fw.keys())}"
-                )
-                assert "SC" in fw, (
-                    f"R0 split task={task} seed={s.seed} fold={s.outer_fold} "
-                    f"missing 'SC' key; keys={list(fw.keys())}"
+                assert "FP" in fw and "SC" in fw
+                assert np.isclose(fw["FP"] + fw["SC"], 1.0, atol=1e-6), (
+                    f"R0 weights don't sum to 1: {fw['FP']:.6f} + {fw['SC']:.6f} = "
+                    f"{fw['FP'] + fw['SC']:.6f}"
                 )
 
 
@@ -105,10 +233,8 @@ class TestMissingRequiredWeightRaises:
         fw = {"FP": 0.4, "SC": 0.6}
         with pytest.raises(KeyError):
             _ = fw["FC"]
-
-        fw2 = {"FC": 0.3, "SC": 0.7}
         with pytest.raises(KeyError):
-            _ = fw2["FP"]
+            _ = fw["missing_key"]
 
     def test_no_get_fallback_in_build_script(self):
         """Build script must not use .get(..., 0.5) for fusion weight access."""
@@ -152,24 +278,17 @@ class TestFusionWeightsCSVSchema:
         missing = required_cols - set(df.columns)
         assert not missing, f"Missing required columns: {missing}"
 
-        if "w_FP" in df.columns and "w_SC" in df.columns:
-            active_mask = df["w_FP"].notna() & df["w_SC"].notna()
-            active = df[active_mask]
-            if len(active) > 0:
-                sums = active["w_FP"] + active["w_SC"]
-                assert np.allclose(sums, 1.0, atol=1e-5), (
-                    f"Active FP/SC weights do not sum to 1.0; "
-                    f"max deviation={np.abs(sums - 1.0).max()}"
-                )
-        elif "w_fc" in df.columns and "w_sc" in df.columns:
-            active_mask = df["w_fc"].notna() & df["w_sc"].notna()
-            active = df[active_mask]
-            if len(active) > 0:
-                sums = active["w_fc"] + active["w_sc"]
-                assert np.allclose(sums, 1.0, atol=1e-5), (
-                    f"Active FC/SC weights do not sum to 1.0; "
-                    f"max deviation={np.abs(sums - 1.0).max()}"
-                )
+        assert "w_FP" in df.columns, "Missing w_FP column in fusion weights CSV"
+        assert "w_SC" in df.columns, "Missing w_SC column in fusion weights CSV"
+
+        active_mask = df["w_FP"].notna() & df["w_SC"].notna()
+        active = df[active_mask]
+        if len(active) > 0:
+            sums = active["w_FP"] + active["w_SC"]
+            assert np.allclose(sums, 1.0, atol=1e-5), (
+                f"Active FP/SC weights do not sum to 1.0; "
+                f"max deviation={np.abs(sums - 1.0).max()}"
+            )
 
         assert len(df) > 0, "Fusion weights CSV is empty"
 

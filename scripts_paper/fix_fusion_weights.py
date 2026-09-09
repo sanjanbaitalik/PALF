@@ -58,23 +58,14 @@ def recompute_fusion_with_data(result, y):
         y_train = y[train_idx]
         y_test = y[test_idx]
 
-        # Recompute fusion weights
-        if condition.use_anisotropy or condition.use_network:
-            fusion_weights, _ = search_fusion_weights(
-                y_train, {"FP": split.fp_oof, "SC": split.sc_oof}, ["FP", "SC"],
-            )
-            w_fp = fusion_weights.get("FP", 0.5)
-            w_sc = fusion_weights.get("SC", 0.5)
-            fused_test = w_fp * split.fp_test_pred + w_sc * split.sc_test_pred
-            ew_test = 0.5 * split.fp_test_pred + 0.5 * split.sc_test_pred
-        else:
-            fusion_weights, _ = search_fusion_weights(
-                y_train, {"FC": split.fc_oof, "SC": split.sc_oof}, ["FC", "SC"],
-            )
-            w_fc = fusion_weights.get("FC", 0.5)
-            w_sc = fusion_weights.get("SC", 0.5)
-            fused_test = w_fc * split.fc_test_pred + w_sc * split.sc_test_pred
-            ew_test = 0.5 * split.fc_test_pred + 0.5 * split.sc_test_pred
+        # Recompute fusion weights — all conditions use FP + SC
+        fusion_weights, _ = search_fusion_weights(
+            y_train, {"FP": split.fp_oof, "SC": split.sc_oof}, ["FP", "SC"],
+        )
+        w_fp = fusion_weights["FP"]
+        w_sc = fusion_weights["SC"]
+        fused_test = w_fp * split.fp_test_pred + w_sc * split.sc_test_pred
+        ew_test = 0.5 * split.fp_test_pred + 0.5 * split.sc_test_pred
 
         # Update split
         split.fusion_weights = fusion_weights

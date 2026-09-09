@@ -1,0 +1,36 @@
+{
+  "freeze_version": "v2_same_solver",
+  "created": "2026-09-09T13:19:40",
+  "script": "scripts_paper/build_freeze_v2_same_solver.py",
+  "gates": {
+    "G01_corrected_r0_exists": true,
+    "G02_no_fc_fusion": true,
+    "G03_r0_uses_fp_sc": true,
+    "G04_ten_seeds": true,
+    "G05_prior_control_loaded": true,
+    "G06_primary_comparisons": true,
+    "G07_holm_across_targets": true,
+    "G08_fp_sc_all_conditions": true,
+    "G09_descriptive_labels": true,
+    "G10_dynamic_bolding": true,
+    "G11_all_csvs": true,
+    "G12_figures_tables": true
+  },
+  "n_passed": 12,
+  "n_total": 12,
+  "all_passed": true,
+  "checkpoint_verification": {
+    "working_memory": {
+      "r3_fused_mean": 0.26249975212135696,
+      "r0_fused_mean_corrected": 0.2635147735902435,
+      "fp_sc_only": true,
+      "no_fc": true
+    },
+    "fluid_intelligence": {
+      "r3_fused_mean": 0.3700313844593241,
+      "r0_fused_mean_corrected": 0.3709173349695604,
+      "fp_sc_only": true,
+      "no_fc": true
+    }
+  }
+}
