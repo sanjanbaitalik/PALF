@@ -1,0 +1,23 @@
+{
+  "rho_zero_tau_zero_total": 32,
+  "exact_baseline_match": 15,
+  "mismatched_lambda_F": 13,
+  "mismatched_alpha_SC": 5,
+  "semantic_active_total": 8,
+  "working_memory": {
+    "semantic_active_count": 5,
+    "semantic_inactive_count": 15,
+    "mean_fused_delta_semantic_active": 0.0137713914253734,
+    "mean_fused_delta_semantic_inactive": 0.0136955757966485,
+    "rho_zero_tau_zero_count": 15,
+    "exact_baseline_match": 9
+  },
+  "fluid_intelligence": {
+    "semantic_active_count": 3,
+    "semantic_inactive_count": 17,
+    "mean_fused_delta_semantic_active": -0.007291359488286634,
+    "mean_fused_delta_semantic_inactive": 0.005576357633717982,
+    "rho_zero_tau_zero_count": 17,
+    "exact_baseline_match": 6
+  }
+}

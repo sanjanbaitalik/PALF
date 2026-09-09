@@ -1,0 +1,50 @@
+{
+  "working_memory": {
+    "total": 20,
+    "rho_zero_count": 17,
+    "tau_zero_count": 17,
+    "both_zero_count": 15,
+    "any_semantic_count": 5,
+    "rho_distribution": {
+      "0.0": 17,
+      "0.25": 3
+    },
+    "tau_distribution": {
+      "0.0": 17,
+      "0.5": 1,
+      "0.003": 1,
+      "0.1": 1
+    },
+    "lambda_F_distribution": {
+      "0.1": 15,
+      "0.001": 2,
+      "1.0": 2,
+      "0.01": 1
+    }
+  },
+  "fluid_intelligence": {
+    "total": 20,
+    "rho_zero_count": 16,
+    "tau_zero_count": 20,
+    "both_zero_count": 16,
+    "any_semantic_count": 4,
+    "rho_distribution": {
+      "0.0": 16,
+      "0.5": 2,
+      "0.25": 2
+    },
+    "tau_distribution": {
+      "0.0": 20
+    },
+    "lambda_F_distribution": {
+      "0.1": 15,
+      "1.0": 5
+    }
+  },
+  "total": {
+    "rho_zero_count": 33,
+    "tau_zero_count": 37,
+    "both_zero_count": 31,
+    "any_semantic_count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "n_splits": 40,
+  "n_tasks": 2,
+  "n_seeds": 4,
+  "n_folds": 5,
+  "elapsed_seconds": 1870.3,
+  "n_coefficient_files": 80,
+  "max_recon_error": 1.8207657603852567e-12,
+  "all_coefficients_finite": true,
+  "gates": {
+    "edge_grouping_disjoint": true,
+    "edge_grouping_exhaustive": true,
+    "identity_gate": true,
+    "train_only_standardization": true,
+    "dev_seeds_only": true
+  }
+}

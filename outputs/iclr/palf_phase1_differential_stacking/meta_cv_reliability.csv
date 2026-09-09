@@ -1,0 +1,3 @@
+task,n_splits,meta_cv_test_correlation,meta_cv_test_p,mean_meta_improvement,mean_test_improvement,frac_positive_test_improvement
+working_memory,50,-0.31233371196046283,0.027227497622906247,0.009774730058462999,-0.009021395334490374,0.34
+fluid_intelligence,50,-0.37676417103013804,0.006998474254927671,0.006236413570798778,-0.005324597260471638,0.3

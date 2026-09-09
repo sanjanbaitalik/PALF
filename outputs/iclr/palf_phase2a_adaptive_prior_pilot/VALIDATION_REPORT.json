@@ -1,0 +1,82 @@
+{
+  "experiment": "Phase 2A Adaptive Prior Pilot",
+  "created": "2026-09-09T20:59:06",
+  "n_splits_total": 40,
+  "dev_seeds": [
+    101,
+    202,
+    303,
+    404
+  ],
+  "n_outer_folds": 5,
+  "n_targets": 2,
+  "grids": {
+    "RHO_GRID": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "TAU_GRID": [
+      0.0,
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.5,
+      1.0,
+      2.0,
+      5.0
+    ],
+    "LAMBDA_F_GRID": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "ALPHA_SC_GRID": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      300.0,
+      1000.0,
+      3000.0
+    ]
+  },
+  "summary": {
+    "working_memory": {
+      "display": "Working Memory",
+      "n_splits": 20,
+      "baseline_mean_fused_pearson": 0.2938670321558593,
+      "adaptive_mean_fused_pearson": 0.307581561859689,
+      "mean_delta_pearson": 0.013714529703829737,
+      "std_delta_pearson": 0.02990589013677455,
+      "frac_positive_delta": 0.4,
+      "adaptive_selections": {
+        "mean_rho": 0.0375,
+        "mean_tau": 0.0006500000000000001,
+        "mean_lambda_F": 0.18505000000000002
+      }
+    },
+    "fluid_intelligence": {
+      "display": "Fluid Intelligence",
+      "n_splits": 20,
+      "baseline_mean_fused_pearson": 0.37339781522372284,
+      "adaptive_mean_fused_pearson": 0.37704401528914017,
+      "mean_delta_pearson": 0.003646200065417293,
+      "std_delta_pearson": 0.013673857302187183,
+      "frac_positive_delta": 0.45,
+      "adaptive_selections": {
+        "mean_rho": 0.0375,
+        "mean_tau": 0.005,
+        "mean_lambda_F": 0.271
+      }
+    }
+  }
+}

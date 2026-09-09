@@ -1,0 +1,90 @@
+{
+  "experiment": "Phase 1 Differential Stacking Feasibility",
+  "created": "2026-09-09T18:09:32",
+  "n_splits_total": 100,
+  "frozen_means_verified": true,
+  "verification": {
+    "working_memory": {
+      "r0_mean": 0.2635147735902435,
+      "r0_expected": 0.263515,
+      "r0_ok": true,
+      "r3_mean": 0.26249975212135696,
+      "r3_expected": 0.2625,
+      "r3_ok": true,
+      "n_r0_seeds": 10,
+      "n_r3_seeds": 10
+    },
+    "fluid_intelligence": {
+      "r0_mean": 0.3709173349695604,
+      "r0_expected": 0.370917,
+      "r0_ok": true,
+      "r3_mean": 0.3700313844593241,
+      "r3_expected": 0.370031,
+      "r3_ok": true,
+      "n_r0_seeds": 10,
+      "n_r3_seeds": 10
+    }
+  },
+  "primary_comparisons": {
+    "working_memory": {
+      "mean_difference": -0.009021395334490359,
+      "ci_95": [
+        -0.027200873975058004,
+        0.003433951349290168
+      ],
+      "raw_p": 0.921875,
+      "p_holm": 0.921875,
+      "cohens_dz": -0.32919096314915747,
+      "significant": false
+    },
+    "fluid_intelligence": {
+      "mean_difference": -0.005324597260471631,
+      "ci_95": [
+        -0.010004725081271475,
+        -0.001708176317242149
+      ],
+      "raw_p": 0.009765625,
+      "p_holm": 0.01953125,
+      "cohens_dz": -0.7329425231517551,
+      "significant": true
+    }
+  },
+  "architecture_selection_summary": {
+    "working_memory": {
+      "A": {
+        "n_selected": 16,
+        "frac_selected": 0.32,
+        "mean_test_pearson": 0.24879093442873024
+      },
+      "B": {
+        "n_selected": 34,
+        "frac_selected": 0.68,
+        "mean_test_pearson": 0.25717688123317567
+      }
+    },
+    "fluid_intelligence": {
+      "A": {
+        "n_selected": 18,
+        "frac_selected": 0.36,
+        "mean_test_pearson": 0.3805693871616795
+      },
+      "B": {
+        "n_selected": 32,
+        "frac_selected": 0.64,
+        "mean_test_pearson": 0.3571683723920065
+      }
+    }
+  },
+  "meta_cv_reliability": {
+    "working_memory": {
+      "meta_cv_test_correlation": -0.31233371196046283,
+      "meta_cv_test_p": 0.027227497622906247,
+      "mean_test_improvement": -0.009021395334490374
+    },
+    "fluid_intelligence": {
+      "meta_cv_test_correlation": -0.37676417103013804,
+      "meta_cv_test_p": 0.006998474254927671,
+      "mean_test_improvement": -0.005324597260471638
+    }
+  }
+}

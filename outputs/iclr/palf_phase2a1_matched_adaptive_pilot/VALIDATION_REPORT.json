@@ -1,0 +1,13 @@
+{
+  "n_splits": 40,
+  "n_tasks": 2,
+  "n_seeds": 4,
+  "n_folds": 5,
+  "elapsed_seconds": 4437.9,
+  "gates": {
+    "shared_sc_per_split": true,
+    "identity_gate": true,
+    "no_outer_test_in_selection": true,
+    "dev_seeds_only": true
+  }
+}

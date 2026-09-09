@@ -1,0 +1,31 @@
+# PALF Phase 2A Adaptive Prior Pilot Configuration
+# Development seeds only - do not use for final ICLR evaluation
+
+# Development seeds (never reuse seeds 0-9)
+dev_seeds: [101, 202, 303, 404]
+n_outer_folds: 5
+
+# Adaptive prior grids
+rho_aniso_grid: [0.0, 0.25, 0.50, 0.75, 1.0]
+tau_net_grid: [0.0, 0.003, 0.01, 0.03, 0.10, 0.50, 1.0, 2.0, 5.0]
+lambda_F_grid: [0.001, 0.01, 0.1, 1.0, 10.0, 100.0]
+
+# Expanded SC grid (upper end extended)
+alpha_SC_grid: [0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 300.0, 1000.0, 3000.0]
+
+# Solver constants
+c_scale: 13340  # 2 * N_EDGE = 2 * 6670
+gamma: 0.5
+epsilon: 0.001
+top_k_prior_rois: 10
+n_rois: 116
+
+# Inner CV
+n_inner_folds: 3
+n_fusion_folds: 3
+
+# One-SE selection
+one_se_rule: true
+
+# Output
+output_dir: outputs/iclr/palf_phase2a_adaptive_prior_pilot
