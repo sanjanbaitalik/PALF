@@ -10,7 +10,7 @@
 | `tables/table_primary_prediction.tex` | `paired_comparisons.csv` | `postprocess_palf_ablation.py` | R3−R0 primary contrast, Holm-corrected |
 | `tables/table_component_ablation.tex` | `component_summary.csv` | `postprocess_palf_ablation.py` | R0–R3 branch/fusion metrics per task |
 | `tables/table_branch_and_fusion.tex` | `branch_fusion_summary.csv` | `generate_remaining_outputs.py` | FC/SC/FP/fused/equal-weight per condition |
-| `tables/table_prior_controls.tex` | `prior_control_comparisons.csv` | `prior_control_refits.py` | Fixed prior-swap predictive specificity (300 refits × 2 tasks) |
+| `tables/table_prior_controls.tex` | N/A | — | Fixed prior-swap predictive specificity |
 | `tables/table_resampling_stability.tex` | `stability_pair_metrics.csv` | `generate_remaining_outputs.py` | Within-seed pairwise fit stability |
 
 ## Figures
@@ -40,5 +40,3 @@
 | `biomarker_fit_metrics.csv` | ~1000 | Per-fit alignment (pending coefficient reconstruction) |
 | `oof_predictions/*.csv` | ~412×200 | Branch OOF predictions |
 | `outer_predictions/*.csv` | ~412×200 | Branch/fusion outer predictions |
-| `prior_control_metrics.csv` | 300 | Per-split prior control refit results (FP + fused) |
-| `prior_control_comparisons.csv` | 12 | Paired comparisons: matched vs each control (Wilcoxon, bootstrap CI) |

@@ -6,6 +6,11 @@
 - **Configuration**: `configs/iclr/palf_crossfit_ablation.yaml`
 - **WM splits completed**: 200/200
 - **FI splits completed**: 200/200
+- **Prior**: LLM-derived matched prior (not uniform placeholder)
+  - WM: `outputs/priors/llm/working_memory_contrastive_qwen3/roi_prior.csv`
+  - FI: `outputs/priors/llm/fluid_intelligence_contrastive_qwen3/roi_prior.csv`
+- **Re-run date**: 2026-09-09
+- **Re-run reason**: Initial run used uniform placeholder prior (`np.ones(n_rois)/n_rois`), which collapsed R0=R1 and R2=R3 because D=I for all conditions. Fixed wiring to pass real LLM-derived priors.
 
 ## Conditions
 
@@ -23,23 +28,23 @@
 | Condition | FC r | SC r | FP r | Fused r | Equal-weight r |
 |---|---|---|---|---|---|
 | R0 | 0.2599 | 0.1320 | 0.2751 | 0.2573 | 0.2676 |
-| R1 | 0.2599 | 0.1320 | 0.2751 | 0.2635 | 0.2646 |
-| R2 | 0.2599 | 0.1320 | 0.2760 | 0.2628 | 0.2651 |
-| R3 | 0.2599 | 0.1320 | 0.2760 | 0.2628 | 0.2651 |
+| R1 | 0.2599 | 0.1320 | 0.2774 | 0.2578 | 0.2510 |
+| R2 | 0.2599 | 0.1320 | 0.2749 | 0.2637 | 0.2667 |
+| R3 | 0.2599 | 0.1320 | 0.2782 | 0.2625 | 0.2611 |
 
 ### Fluid Intelligence
 
 | Condition | FC r | SC r | FP r | Fused r | Equal-weight r |
 |---|---|---|---|---|---|
 | R0 | 0.1848 | 0.3571 | 0.2166 | 0.3642 | 0.3231 |
-| R1 | 0.1848 | 0.3571 | 0.2166 | 0.3709 | 0.3700 |
-| R2 | 0.1848 | 0.3571 | 0.2125 | 0.3689 | 0.3671 |
-| R3 | 0.1848 | 0.3571 | 0.2125 | 0.3689 | 0.3671 |
+| R1 | 0.1848 | 0.3571 | 0.2339 | 0.3678 | 0.3708 |
+| R2 | 0.1848 | 0.3571 | 0.2135 | 0.3703 | 0.3689 |
+| R3 | 0.1848 | 0.3571 | 0.2239 | 0.3700 | 0.3678 |
 
 ## Paired Comparisons (Primary: R3 vs R0)
 
-- **working_memory**: +0.0055 (95% CI [-0.0041, +0.0139], p=0.3223, adj_p=0.3223)
-- **fluid_intelligence**: +0.0047 (95% CI [-0.0027, +0.0129], p=0.4922, adj_p=0.4922)
+- **working_memory**: +0.0052 (95% CI [-0.0044, +0.0150], p=0.4922, adj_p=0.4922)
+- **fluid_intelligence**: +0.0059 (95% CI [-0.0017, +0.0143], p=0.2324, adj_p=0.2324)
 
 ## Resampling Stability (within-seed pairwise fit)
 

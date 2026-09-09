@@ -356,6 +356,7 @@ def main():
                 X_sc=sc,
                 y=targets[task_key],
                 task_name=task_key,
+                roi_prior=matched_prior,
                 seeds=cfg["seeds"],
                 n_outer_folds=cfg["outer_folds"],
                 ridge_grid=cfg["ridge_grid"],

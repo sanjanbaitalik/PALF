@@ -21970,8 +21970,8 @@
       68
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.15,
+      "SC": 0.85
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -22401,8 +22401,8 @@
       286
     ],
     "fusion_weights": {
-      "FP": 0.55,
-      "SC": 0.45
+      "FP": 0.6,
+      "SC": 0.4
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -22832,13 +22832,13 @@
       213
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -23263,8 +23263,8 @@
       148
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -23694,8 +23694,8 @@
       172
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.1,
+      "SC": 0.9
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -24125,13 +24125,13 @@
       327
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -24556,8 +24556,8 @@
       150
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.1,
+      "SC": 0.9
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -24987,13 +24987,13 @@
       206
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -25418,8 +25418,8 @@
       302
     ],
     "fusion_weights": {
-      "FP": 0.5,
-      "SC": 0.5
+      "FP": 0.55,
+      "SC": 0.45
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -25849,8 +25849,8 @@
       37
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -26280,8 +26280,8 @@
       243
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.05,
+      "SC": 0.95
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -26711,8 +26711,8 @@
       106
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -27142,13 +27142,13 @@
       390
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -27573,8 +27573,8 @@
       308
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -28004,8 +28004,8 @@
       168
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -28435,8 +28435,8 @@
       230
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.15,
+      "SC": 0.85
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -28866,13 +28866,13 @@
       319
     ],
     "fusion_weights": {
-      "FP": 0.0,
-      "SC": 1.0
+      "FP": 0.1,
+      "SC": 0.9
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -29297,8 +29297,8 @@
       349
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.05,
+      "SC": 0.95
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -29728,8 +29728,8 @@
       295
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -30159,8 +30159,8 @@
       362
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -30596,7 +30596,7 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 1.0,
+      "lambda_fc": 0.1,
       "lambda_l": 0.0
     }
   },
@@ -31021,8 +31021,8 @@
       332
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -31452,8 +31452,8 @@
       162
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.55,
+      "SC": 0.45
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -31889,7 +31889,7 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -32314,8 +32314,8 @@
       122
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.55,
+      "SC": 0.45
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -32745,8 +32745,8 @@
       141
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -33607,8 +33607,8 @@
       305
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.5,
+      "SC": 0.5
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -34038,13 +34038,13 @@
       349
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -34469,13 +34469,13 @@
       355
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -35331,8 +35331,8 @@
       96
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -35762,8 +35762,8 @@
       320
     ],
     "fusion_weights": {
-      "FP": 0.55,
-      "SC": 0.45
+      "FP": 0.6,
+      "SC": 0.4
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -36193,13 +36193,13 @@
       364
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -36624,8 +36624,8 @@
       394
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -37486,8 +37486,8 @@
       94
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.15,
+      "SC": 0.85
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -38779,8 +38779,8 @@
       175
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -39210,13 +39210,13 @@
       306
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -39641,8 +39641,8 @@
       321
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.45,
+      "SC": 0.55
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -40072,8 +40072,8 @@
       372
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.45,
+      "SC": 0.55
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -41365,8 +41365,8 @@
       399
     ],
     "fusion_weights": {
-      "FP": 0.45,
-      "SC": 0.55
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -41802,7 +41802,7 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -42227,13 +42227,13 @@
       158
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -42658,13 +42658,13 @@
       203
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -43095,7 +43095,7 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.0
     }
   },
@@ -44382,8 +44382,8 @@
       213
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.15,
+      "SC": 0.85
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -45251,7 +45251,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -46106,14 +46106,14 @@
       150
     ],
     "fusion_weights": {
-      "FP": 0.1,
-      "SC": 0.9
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_fc": 0.1,
+      "lambda_l": 5.0
     }
   },
   {
@@ -46537,14 +46537,14 @@
       206
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -46968,8 +46968,8 @@
       302
     ],
     "fusion_weights": {
-      "FP": 0.45,
-      "SC": 0.55
+      "FP": 0.55,
+      "SC": 0.45
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -47399,8 +47399,8 @@
       37
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -47837,7 +47837,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -48267,8 +48267,8 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.01,
-      "lambda_l": 5.0
+      "lambda_fc": 0.1,
+      "lambda_l": 0.03
     }
   },
   {
@@ -49561,7 +49561,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -50416,14 +50416,14 @@
       319
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.0,
+      "SC": 1.0
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -50847,8 +50847,8 @@
       349
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.15,
+      "SC": 0.85
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -51278,14 +51278,14 @@
       295
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -51709,8 +51709,8 @@
       362
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -52140,14 +52140,14 @@
       120
     ],
     "fusion_weights": {
-      "FP": 0.0,
-      "SC": 1.0
+      "FP": 0.05,
+      "SC": 0.95
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_fc": 0.1,
+      "lambda_l": 5.0
     }
   },
   {
@@ -52578,7 +52578,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -53002,14 +53002,14 @@
       162
     ],
     "fusion_weights": {
-      "FP": 0.45,
-      "SC": 0.55
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_fc": 0.1,
+      "lambda_l": 2.0
     }
   },
   {
@@ -53433,14 +53433,14 @@
       337
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.1,
+      "SC": 0.9
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 1.0
     }
   },
   {
@@ -54295,8 +54295,8 @@
       141
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -54726,8 +54726,8 @@
       4
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -55164,7 +55164,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 0.1
+      "lambda_l": 0.03
     }
   },
   {
@@ -55588,8 +55588,8 @@
       349
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -56450,8 +56450,8 @@
       217
     ],
     "fusion_weights": {
-      "FP": 0.1,
-      "SC": 0.9
+      "FP": 0.15,
+      "SC": 0.85
     },
     "fc_alpha": 100.0,
     "sc_alpha": 0.001,
@@ -56881,14 +56881,14 @@
       96
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -57750,7 +57750,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 2.0
+      "lambda_l": 5.0
     }
   },
   {
@@ -58174,8 +58174,8 @@
       394
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -58605,8 +58605,8 @@
       59
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -59042,8 +59042,8 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.01,
-      "lambda_l": 1.0
+      "lambda_fc": 0.1,
+      "lambda_l": 0.03
     }
   },
   {
@@ -59467,8 +59467,8 @@
       146
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -61191,14 +61191,14 @@
       321
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -62060,7 +62060,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 1.0
     }
   },
   {
@@ -62915,8 +62915,8 @@
       399
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.45,
+      "SC": 0.55
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -63346,8 +63346,8 @@
       400
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -63784,7 +63784,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.1
+      "lambda_l": 0.03
     }
   },
   {
@@ -64208,14 +64208,14 @@
       203
     ],
     "fusion_weights": {
-      "FP": 0.05,
-      "SC": 0.95
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -64639,14 +64639,14 @@
       382
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 2.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -65070,8 +65070,8 @@
       68
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -65932,13 +65932,13 @@
       213
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.03
     }
   },
@@ -66801,7 +66801,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -67225,13 +67225,13 @@
       327
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.03
     }
   },
@@ -67662,8 +67662,8 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_fc": 0.1,
+      "lambda_l": 5.0
     }
   },
   {
@@ -68087,14 +68087,14 @@
       206
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -68518,8 +68518,8 @@
       302
     ],
     "fusion_weights": {
-      "FP": 0.45,
-      "SC": 0.55
+      "FP": 0.55,
+      "SC": 0.45
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -68949,8 +68949,8 @@
       37
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -69380,14 +69380,14 @@
       243
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.05,
+      "SC": 0.95
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -69811,14 +69811,14 @@
       106
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.01,
-      "lambda_l": 5.0
+      "lambda_fc": 0.1,
+      "lambda_l": 0.03
     }
   },
   {
@@ -70242,13 +70242,13 @@
       390
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.03
     }
   },
@@ -70673,8 +70673,8 @@
       308
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -71104,14 +71104,14 @@
       168
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -71966,8 +71966,8 @@
       319
     ],
     "fusion_weights": {
-      "FP": 0.15,
-      "SC": 0.85
+      "FP": 0.05,
+      "SC": 0.95
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -72397,8 +72397,8 @@
       349
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.1,
+      "SC": 0.9
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -72828,14 +72828,14 @@
       295
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -73696,8 +73696,8 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_fc": 0.1,
+      "lambda_l": 5.0
     }
   },
   {
@@ -74121,14 +74121,14 @@
       332
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
-      "lambda_l": 5.0
+      "lambda_fc": 1.0,
+      "lambda_l": 0.03
     }
   },
   {
@@ -74552,14 +74552,14 @@
       162
     ],
     "fusion_weights": {
-      "FP": 0.45,
-      "SC": 0.55
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_l": 1.0
     }
   },
   {
@@ -74989,8 +74989,8 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_fc": 1.0,
+      "lambda_l": 0.5
     }
   },
   {
@@ -76707,14 +76707,14 @@
       305
     ],
     "fusion_weights": {
-      "FP": 0.45,
-      "SC": 0.55
+      "FP": 0.5,
+      "SC": 0.5
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 0.1
+      "lambda_l": 0.5
     }
   },
   {
@@ -77575,7 +77575,7 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.03
     }
   },
@@ -78000,8 +78000,8 @@
       217
     ],
     "fusion_weights": {
-      "FP": 0.1,
-      "SC": 0.9
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 0.001,
@@ -78438,7 +78438,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -78862,8 +78862,8 @@
       320
     ],
     "fusion_weights": {
-      "FP": 0.55,
-      "SC": 0.45
+      "FP": 0.6,
+      "SC": 0.4
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -79293,14 +79293,14 @@
       364
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.2,
+      "SC": 0.8
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 2.0
+      "lambda_l": 5.0
     }
   },
   {
@@ -79724,8 +79724,8 @@
       394
     ],
     "fusion_weights": {
-      "FP": 0.4,
-      "SC": 0.6
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -80155,14 +80155,14 @@
       59
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 1.0
     }
   },
   {
@@ -80586,14 +80586,14 @@
       94
     ],
     "fusion_weights": {
-      "FP": 0.2,
-      "SC": 0.8
+      "FP": 0.1,
+      "SC": 0.9
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.01,
-      "lambda_l": 1.0
+      "lambda_fc": 0.1,
+      "lambda_l": 0.03
     }
   },
   {
@@ -81017,8 +81017,8 @@
       146
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -81448,8 +81448,8 @@
       358
     ],
     "fusion_weights": {
-      "FP": 0.25,
-      "SC": 0.75
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -81885,8 +81885,8 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 1.0,
-      "lambda_l": 0.03
+      "lambda_fc": 0.1,
+      "lambda_l": 5.0
     }
   },
   {
@@ -82316,7 +82316,7 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.03
     }
   },
@@ -82741,14 +82741,14 @@
       321
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 5.0
+      "lambda_l": 0.03
     }
   },
   {
@@ -83172,8 +83172,8 @@
       372
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.45,
+      "SC": 0.55
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -83610,7 +83610,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 0.5
     }
   },
   {
@@ -84041,7 +84041,7 @@
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 0.1
     }
   },
   {
@@ -84465,8 +84465,8 @@
       399
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.35,
+      "SC": 0.65
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
@@ -84896,13 +84896,13 @@
       400
     ],
     "fusion_weights": {
-      "FP": 0.3,
-      "SC": 0.7
+      "FP": 0.4,
+      "SC": 0.6
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
+      "lambda_fc": 1.0,
       "lambda_l": 0.03
     }
   },
@@ -85333,8 +85333,8 @@
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
-      "lambda_fc": 0.1,
-      "lambda_l": 0.1
+      "lambda_fc": 1.0,
+      "lambda_l": 0.03
     }
   },
   {
@@ -85758,14 +85758,14 @@
       203
     ],
     "fusion_weights": {
-      "FP": 0.05,
-      "SC": 0.95
+      "FP": 0.25,
+      "SC": 0.75
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 0.03
+      "lambda_l": 5.0
     }
   },
   {
@@ -86189,14 +86189,14 @@
       382
     ],
     "fusion_weights": {
-      "FP": 0.35,
-      "SC": 0.65
+      "FP": 0.3,
+      "SC": 0.7
     },
     "fc_alpha": 100.0,
     "sc_alpha": 100.0,
     "fp_params": {
       "lambda_fc": 0.1,
-      "lambda_l": 2.0
+      "lambda_l": 5.0
     }
   }
 ]

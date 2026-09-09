@@ -15,11 +15,5 @@
   "coefficients_saved": false,
   "coefficients_note": "FC/SC coefficients not stored in checkpoint; would require refitting",
   "latex_tables_generated": true,
-  "run_report_updated": true,
-  "prior_control_refits_complete": true,
-  "n_prior_control_refits": 300,
-  "prior_control_refits_per_task": 150,
-  "prior_controls_tested": ["cross_task", "shuffled", "random"],
-  "prior_control_comparisons": true,
-  "prior_control_latex_table": true
+  "run_report_updated": true
 }

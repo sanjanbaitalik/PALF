@@ -904,6 +904,7 @@ def run_ablation_experiment(
     X_sc: np.ndarray,
     y: np.ndarray,
     task_name: str,
+    roi_prior: Optional[np.ndarray] = None,
     seeds: Sequence[int] = tuple(range(10)),
     n_outer_folds: int = 5,
     ridge_grid: Sequence[float] = RIDGE_GRID,
@@ -917,7 +918,16 @@ def run_ablation_experiment(
 ) -> AblationTaskResult:
     """Run complete ablation experiment for one task.
 
-    Returns AblationTaskResult with all splits.
+    Parameters
+    ----------
+    roi_prior : np.ndarray, optional
+        ROI-level prior vector (length n_rois).  Required for conditions that
+        use anisotropy (R1, R3).  If *None*, falls back to a uniform prior
+        (which collapses anisotropic conditions to identity D).
+
+    Returns
+    -------
+    AblationTaskResult with all splits.
     """
     if smoke_mode:
         seeds = seeds[:1]
@@ -939,16 +949,14 @@ def run_ablation_experiment(
                 f"n_train={len(train_idx)} n_test={len(test_idx)}"
             )
 
-            # Load priors from the matched prior for this task
-            # (Priors are passed via roi_prior argument)
-            # We need to load the actual prior for this task
-            # For now, use a placeholder; the runner will pass the correct prior
-            roi_prior_placeholder = np.ones(n_rois) / n_rois
+            # Use the provided roi_prior, or fall back to uniform placeholder
+            # (R0-only baseline does not use the prior, so placeholder is fine there)
+            _prior = roi_prior if roi_prior is not None else np.ones(n_rois) / n_rois
 
             t0 = time.time()
             result = evaluate_ablation_split(
                 X_fc, X_sc, y, seed, fold, train_idx, test_idx,
-                condition, roi_prior_placeholder,
+                condition, _prior,
                 ridge_grid, n_fusion_folds, n_inner, n_final_cv, n_rois,
             )
             elapsed = time.time() - t0
