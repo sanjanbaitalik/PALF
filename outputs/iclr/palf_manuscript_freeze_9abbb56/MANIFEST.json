@@ -1,0 +1,25 @@
+{
+  "freeze_id": "9abbb56",
+  "description": "PALF manuscript freeze for ICLR submission",
+  "files": {
+    "data/prior_control_refits.csv": "300 raw refit rows (50 R3 splits x 3 controls x 2 tasks)",
+    "data/seed_level_prior_control.csv": "Seed-level aggregates (60 rows)",
+    "data/prior_control_comparisons.csv": "Prior-control comparisons with Holm correction",
+    "data/primary_comparisons.csv": "Primary comparisons (Full PALF vs No prior) across 2 targets",
+    "data/fusion_weights.csv": "Fusion weights with FP/SC schema (400 rows)",
+    "figures/fig_main_2x2.pdf": "Main 2x2 figure",
+    "figures/fig_main_2x2.png": "Main 2x2 figure (raster)",
+    "figures/fig_fusion_weights_supp.pdf": "Supplementary: fusion weight distributions",
+    "figures/fig_fusion_weights_supp.png": "Supplementary: fusion weight distributions (raster)",
+    "figures/fig_ablation_supp.pdf": "Supplementary: ablation comparison",
+    "figures/fig_ablation_supp.png": "Supplementary: ablation comparison (raster)",
+    "tables/table_primary_prediction.tex": "Table 1: Primary prediction results",
+    "tables/table_primary_comparisons.tex": "Table 2: Primary comparisons",
+    "tables/table_prior_control_specificity.tex": "Table 3: Prior-control specificity",
+    "tables/table_fusion_weights.tex": "Table 4: Fusion weight summary",
+    "UNSUPPORTED_ARTIFACTS.md": "List of excluded artifacts",
+    "audit_report.json": "Full audit report with checksums",
+    "MANIFEST.json": "This file",
+    "checksums/MANIFEST.sha256": "SHA-256 checksums for all files"
+  }
+}

@@ -83,8 +83,8 @@ def save_all_outputs(result, task_output: Path):
         fw_rows.append({
             "task": result.task_name, "seed": split.seed,
             "outer_fold": split.outer_fold, "condition": split.condition_id,
-            "w_FC": split.fusion_weights.get("FC", 0.5),
-            "w_SC": split.fusion_weights.get("SC", 0.5),
+            "w_FP": split.fusion_weights["FP"],
+            "w_SC": split.fusion_weights["SC"],
         })
     pd.DataFrame(fw_rows).to_csv(task_output / "fusion_weights.csv", index=False)
 
@@ -407,7 +407,7 @@ def _plot_main_results_4panel(wm_result, fi_result, plot_dir):
         w_fp = []
         for split in result.splits:
             if split.condition_id == "R3":
-                w_fp.append(split.fusion_weights.get("FC", 0.5))
+                w_fp.append(split.fusion_weights["FP"])
 
         ax.hist(w_fp, bins=np.arange(-0.025, 1.075, 0.05), color="#1f77b4",
                 edgecolor="black", linewidth=0.3)
@@ -436,15 +436,15 @@ def _plot_fusion_weights(wm_result, fi_result, plot_dir):
         (axes[0], wm_result, "Working Memory"),
         (axes[1], fi_result, "Fluid Intelligence"),
     ]:
-        w_fc = []
+        w_fp = []
         for split in result.splits:
             if split.condition_id == "R3":
-                w_fc.append(split.fusion_weights.get("FC", 0.5))
+                w_fp.append(split.fusion_weights["FP"])
 
-        ax.hist(w_fc, bins=np.arange(-0.025, 1.075, 0.05), color="#1f77b4",
+        ax.hist(w_fp, bins=np.arange(-0.025, 1.075, 0.05), color="#1f77b4",
                 edgecolor="black", linewidth=0.3)
-        ax.axvline(np.mean(w_fc), linestyle="--", color="red", linewidth=1,
-                   label=f"mean={np.mean(w_fc):.2f}")
+        ax.axvline(np.mean(w_fp), linestyle="--", color="red", linewidth=1,
+                   label=f"mean={np.mean(w_fp):.2f}")
         ax.set_xlabel(r"Prior-aware FC weight $w_{FP}$")
         ax.set_ylabel("Outer splits")
         ax.set_title(task_label, fontweight="bold")

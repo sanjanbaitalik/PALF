@@ -191,13 +191,15 @@ def save_fusion_weights(result, output_dir: Path):
     """Save fusion weights for each split."""
     rows = []
     for split in result.splits:
+        fw = split.fusion_weights
+        w_primary = fw.get("FP", fw.get("FC", 0.5))
         rows.append({
             "task": result.task_name,
             "seed": split.seed,
             "outer_fold": split.outer_fold,
             "condition": split.condition_id,
-            "w_FC": split.fusion_weights.get("FC", 0.5),
-            "w_SC": split.fusion_weights.get("SC", 0.5),
+            "w_primary": w_primary,
+            "w_SC": fw.get("SC", 0.5),
         })
     pd.DataFrame(rows).to_csv(output_dir / "fusion_weights.csv", index=False)
 

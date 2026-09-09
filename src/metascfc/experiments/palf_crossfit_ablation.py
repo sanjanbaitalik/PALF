@@ -1030,8 +1030,8 @@ def evaluate_prior_swap_fixed(
 
     # Use R3's final SC and fusion weights
     sc_final = matched_result.sc_final
-    w_fc = matched_result.fusion_weights.get("FC", 0.5)
-    w_sc = matched_result.fusion_weights.get("SC", 0.5)
+    w_fp = matched_result.fusion_weights["FP"]
+    w_sc = matched_result.fusion_weights["SC"]
 
     # Refit FC branch with control prior
     scaler_fc = StandardScaler()
@@ -1063,20 +1063,20 @@ def evaluate_prior_swap_fixed(
     sc_test = sc_model.predict(X_sc_test_z)
 
     # Fused prediction with matched weights
-    fused = w_fc * ctrl_test + w_sc * sc_test
+    fused = w_fp * ctrl_test + w_sc * sc_test
 
     m = prediction_metrics(y_test, fused)
-    fc_only_m = prediction_metrics(y_test, ctrl_test)
+    fp_only_m = prediction_metrics(y_test, ctrl_test)
 
     return {
         "prior_type": control_prior_type,
         "fused_pearson": m["pearson"],
         "fused_rmse": m["rmse"],
         "fused_mae": m["mae"],
-        "fc_only_pearson": fc_only_m["pearson"],
-        "fc_only_rmse": fc_only_m["rmse"],
-        "fc_only_mae": fc_only_m["mae"],
-        "w_fc": w_fc,
+        "fp_only_pearson": fp_only_m["pearson"],
+        "fp_only_rmse": fp_only_m["rmse"],
+        "fp_only_mae": fp_only_m["mae"],
+        "w_fp": w_fp,
         "w_sc": w_sc,
         "fp_params": fp_params,
     }
