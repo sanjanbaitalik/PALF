@@ -1,0 +1,13 @@
+{
+  "wm_mean_pearson": 0.25785433321860335,
+  "wm_std_pearson": 0.10878759248463449,
+  "wm_expected": 0.2635,
+  "wm_pass": true,
+  "fi_mean_pearson": 0.36503667477682383,
+  "fi_std_pearson": 0.07833367557179306,
+  "fi_expected": 0.3709,
+  "fi_pass": true,
+  "overall_pass": true,
+  "runtime_seconds": 111.6104474067688,
+  "n_splits": 50
+}
