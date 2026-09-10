@@ -1,0 +1,22 @@
+{
+  "wm_mean_pearson": 0.26351477359024345,
+  "wm_std_pearson": 0.10182585786756604,
+  "wm_expected_pearson": 0.263515,
+  "wm_pearson_pass": true,
+  "wm_mean_rmse": 11.292921002711033,
+  "wm_expected_rmse": 11.2929,
+  "wm_rmse_pass": true,
+  "wm_pass": true,
+  "fi_mean_pearson": 0.3709173349695606,
+  "fi_std_pearson": 0.07461757182907808,
+  "fi_expected_pearson": 0.370917,
+  "fi_pearson_pass": true,
+  "fi_mean_rmse": 4.566689193658603,
+  "fi_expected_rmse": 4.5667,
+  "fi_rmse_pass": true,
+  "fi_pass": true,
+  "overall_pass": true,
+  "runtime_seconds": 550.33824634552,
+  "n_splits": 50,
+  "baseline_code_path": "R0 from palf_crossfit_ablation.py"
+}

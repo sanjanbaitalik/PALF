@@ -1,0 +1,43 @@
+{
+  "F1_baseline_code_path": "R0 from palf_crossfit_ablation.py via generate_crossfit_oof + reselect_and_fit_final",
+  "F1_status": "FIXED",
+  "F2_calibration": "R0 handles target centering/scaling correctly; no custom _fit_and_predict_ridge_on_subset with fit_intercept=False",
+  "F2_status": "FIXED",
+  "F3_expert_module": "prior_subspace_expert_fusion_fix.py (leakage-free scaler per inner fold)",
+  "F3_status": "FIXED",
+  "F4_independent_masks": "generate_expert_crossfit_oof_fixed with _select_best_mask_for_modality per modality",
+  "F4_status": "FIXED",
+  "F5_reconstruction": "validate_expert_reconstruction and validate_final_reconstruction from corrected module",
+  "F5_status": "FIXED",
+  "F6_audit_tolerances": {
+    "pearson_tolerance": "5e-4",
+    "rmse_tolerance": "0.05",
+    "wm_expected_pearson": 0.263515,
+    "fi_expected_pearson": 0.370917,
+    "wm_expected_rmse": 11.2929,
+    "fi_expected_rmse": 4.5667
+  },
+  "F6_status": "FIXED",
+  "dev_seeds": [
+    1717,
+    1818,
+    1919,
+    2020
+  ],
+  "audit_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "output_dir": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/outputs/iclr/palf_phase2d_fix_ps_ncr_expert_fusion",
+  "max_recon_error_expert_ncr": 4.632738637155853e-12,
+  "max_recon_error_final_ncr": 1.1510792319313623e-12,
+  "reconstruction_pass": true
+}

@@ -1,0 +1,8 @@
+{
+  "WM_matched_mean_alpha": 0.3675,
+  "WM_matched_mean_expert_w_fc": 0.7849999999999999,
+  "WM_matched_mean_expert_w_sc": 0.215,
+  "FI_matched_mean_alpha": 0.09750000000000002,
+  "FI_matched_mean_expert_w_fc": 0.33499999999999996,
+  "FI_matched_mean_expert_w_sc": 0.665
+}
