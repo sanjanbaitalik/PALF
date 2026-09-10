@@ -1,0 +1,23 @@
+{
+  "atlas_source": "AAL116 (inputs/atlases/AAL116.nii.gz)",
+  "yeo_source": "Yeo 2011 7-network atlas via nilearn",
+  "n_rois": 116,
+  "n_cortical": 76,
+  "n_subcortical": 14,
+  "n_cerebellar": 26,
+  "n_unresolved": 0,
+  "system_counts": {
+    "CEREBELLAR": 26,
+    "VAS": 18,
+    "SUBCORTICAL": 14,
+    "VIS": 14,
+    "SM": 13,
+    "FPN": 12,
+    "DMN": 10,
+    "LIMBIC": 7,
+    "DATN": 2
+  },
+  "min_cortical_overlap_fraction": 0.2674,
+  "unresolved_rois": [],
+  "mapping_csv_sha256_prefix": "9002858eb66636c1"
+}

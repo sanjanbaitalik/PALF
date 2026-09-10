@@ -1,0 +1,13 @@
+{
+  "task": "fluid_intelligence",
+  "model": "qwen3.8:27b",
+  "seeds": [
+    31,
+    37,
+    43,
+    47,
+    53
+  ],
+  "prompt_hash": "7e345a58a947cf1b",
+  "n_pairs": 45
+}
