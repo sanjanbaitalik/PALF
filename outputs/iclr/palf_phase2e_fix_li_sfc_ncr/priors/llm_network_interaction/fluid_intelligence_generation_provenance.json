@@ -1,0 +1,32 @@
+{
+  "task": "fluid_intelligence",
+  "model": "qwen3.8:27b",
+  "model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+  "temperature": 0.2,
+  "seeds": [
+    31,
+    37,
+    43,
+    47,
+    53
+  ],
+  "prompt_sha256": "f6e82e51737f37bc72ae7e316e010d3a3f2d95c14a9907c5480403e852c47094",
+  "raw_response_hashes": {
+    "fluid_intelligence_raw_seed31": "fd84abd709a9f128d14230fac0c7466f93cb8b1ebbd8f976e61d1abd517e45b2",
+    "fluid_intelligence_raw_seed37": "eb22cae3964867e8dca913173c41337145dc4a19eb149c6073fe203c037cf7f2",
+    "fluid_intelligence_raw_seed43": "0abfe2eab2e848fe5071f54233f116859b67f2025e4650499f1db17e2794f254",
+    "fluid_intelligence_raw_seed47": "f3622b01a6ea28bbc8aade32b04362936b6f9e1b199087b850e8506bb41c297d",
+    "fluid_intelligence_raw_seed53": "cbe228bf17233e627e9c18bdc2b1c36789ed2e12da9c8856f2daa7232e280b7a"
+  },
+  "n_seeds_collected": 5,
+  "n_pairs": 45,
+  "validation_status": "45/45",
+  "generation_timestamp": "2026-09-10T14:29:56Z",
+  "seed_status": {
+    "31": "OK",
+    "37": "OK",
+    "43": "OK",
+    "47": "OK",
+    "53": "OK"
+  }
+}

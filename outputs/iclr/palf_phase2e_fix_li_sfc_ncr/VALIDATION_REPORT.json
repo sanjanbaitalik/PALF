@@ -1,0 +1,7 @@
+{
+  "decision": "NO_GO",
+  "status": "PHASE2E_FIX_COMPLETE",
+  "baseline_audit": "PASS",
+  "wm_fi_pearson": 0.905,
+  "top5_overlap": 3
+}

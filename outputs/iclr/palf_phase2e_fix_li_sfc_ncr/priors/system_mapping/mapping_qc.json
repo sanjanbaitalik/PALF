@@ -1,0 +1,35 @@
+{
+  "nilearn_version": "unknown",
+  "atlas_path": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/inputs/atlases/AAL116.nii.gz",
+  "atlas_hash": "a4c765ad62199021",
+  "labels_path": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/inputs/atlases/AAL116_labels.csv",
+  "yeo_version": "Yeo 2011 7-network (thick)",
+  "yeo_id_mapping": {
+    "1": "VIS",
+    "2": "SM",
+    "3": "DAN",
+    "4": "VAN",
+    "5": "LIMBIC",
+    "6": "FPN",
+    "7": "DMN"
+  },
+  "system_counts": {
+    "CEREBELLAR": 26,
+    "DMN": 18,
+    "SUBCORTICAL": 14,
+    "VIS": 14,
+    "SM": 13,
+    "LIMBIC": 12,
+    "FPN": 10,
+    "VAN": 7,
+    "DAN": 2
+  },
+  "n_total_rois": 116,
+  "n_cortical": 76,
+  "n_subcortical": 14,
+  "n_cerebellar": 26,
+  "n_unresolved": 0,
+  "unresolved_rois": [],
+  "min_cortical_overlap_fraction": 0.2673601349451785,
+  "n_remapped": 0
+}

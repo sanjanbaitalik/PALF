@@ -1,0 +1,32 @@
+{
+  "task": "working_memory",
+  "model": "qwen3.8:27b",
+  "model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+  "temperature": 0.2,
+  "seeds": [
+    31,
+    37,
+    43,
+    47,
+    53
+  ],
+  "prompt_sha256": "6b7356ca0f5564e7af2d92930cea42d0ed8eebfefc70595d0c7394382d6af244",
+  "raw_response_hashes": {
+    "working_memory_raw_seed31": "f9aa9f5b423e06cd0cc04af2ea1ab9884257e1ad51c5aa92a37c05bcf5e37482",
+    "working_memory_raw_seed37": "f6f9f8f9653aa64605035948029aae6007f1d30f6ea7004655c8ef0ffa1983ab",
+    "working_memory_raw_seed43": "ca302f52260201d645cadde3067847a4198c944e368efedeab8cd4abda98bb93",
+    "working_memory_raw_seed47": "916ac20e039715f2519d5adc48df03b2291940f89525cc95856aa39554204c50",
+    "working_memory_raw_seed53": "d50781fff42a337a40bef8c60b6b814c0da6cc907eb6f28e7a4ee4e8038d2fb7"
+  },
+  "n_seeds_collected": 5,
+  "n_pairs": 45,
+  "validation_status": "45/45",
+  "generation_timestamp": "2026-09-10T14:16:52Z",
+  "seed_status": {
+    "31": "OK",
+    "37": "OK",
+    "43": "OK",
+    "47": "OK",
+    "53": "OK"
+  }
+}
