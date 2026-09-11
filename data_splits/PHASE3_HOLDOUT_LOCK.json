@@ -1,0 +1,8 @@
+{
+  "n_subjects": 98,
+  "canonical_sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425",
+  "status": "SEALED_UNTOUCHED_FOR_PHASE3A",
+  "allowed_phase": "Phase3B_only_after_MODEL_FROZEN",
+  "labels_may_be_loaded_in_phase3a": false,
+  "features_may_be_loaded_in_phase3a": false
+}
