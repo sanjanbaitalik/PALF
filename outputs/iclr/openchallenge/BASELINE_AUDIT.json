@@ -1,0 +1,26 @@
+{
+  "details": {
+    "WM": {
+      "r": 0.26351477359024317,
+      "rmse": 11.292921002711036,
+      "expected_r": 0.263515,
+      "expected_rmse": 11.292921,
+      "pass": true,
+      "r_err": 2.264097568316359e-07,
+      "rmse_err": 2.7110367284421955e-09
+    },
+    "FI": {
+      "r": 0.3709173349695605,
+      "rmse": 4.566689193658603,
+      "expected_r": 0.370917,
+      "expected_rmse": 4.566689,
+      "pass": true,
+      "r_err": 3.3496956047818216e-07,
+      "rmse_err": 1.936586029316345e-07
+    }
+  },
+  "status": "PASS",
+  "tolerance_pearson": 0.0005,
+  "tolerance_rmse": 0.05,
+  "lock_sha256": "daff28b377bb8141718f726d9fa13b685f2627bb572a3c8fedaf7d5d64b2f0dd"
+}
