@@ -27,6 +27,9 @@ from metascfc.openchallenge.ckr import (  # noqa: E402
 )
 
 OUT = ROOT / "outputs" / "iclr" / "openchallenge"
+ARCHIVE = ROOT / "outputs" / "iclr" / "openchallenge_run1_archive"
+if not (OUT / "PHASE3A_DATA_ACCESS_LOG.jsonl").exists() and ARCHIVE.exists():
+    OUT = ARCHIVE
 HOLDOUT_TXT = ROOT / "data_splits" / "phase3_holdout_98.txt"
 DEV_TXT = ROOT / "data_splits" / "phase3_development_412.txt"
 

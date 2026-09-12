@@ -1,0 +1,175 @@
+{
+  "challenge": "OpenCode Go Open Research Challenge (prediction + biomarkers, 412 cohort)",
+  "decision": "NO_METHOD_JUSTIFIED",
+  "baseline": {
+    "R0_strict_audit_seeds_0_9": {
+      "WM": {
+        "r": 0.2635147736,
+        "rmse": 11.2929210027,
+        "pass": true
+      },
+      "FI": {
+        "r": 0.370917335,
+        "rmse": 4.5666891937,
+        "pass": true
+      }
+    }
+  },
+  "holdout": {
+    "count": 98,
+    "sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425",
+    "touched": false
+  },
+  "screening_protocol": {
+    "description": "Every candidate predictor was blended with R0 under an honest nested protocol: the blend weight (and any candidate hyperparameters) were selected only on a 3-fold inner OOF within the outer-training scope; the outer-test fold remained untouched.",
+    "screening_seeds": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "n_candidate_predictors_tested": 60,
+    "n_screens": 9
+  },
+  "decisive_falsification": {
+    "screen": "screen #8: fixed-representation subject-relative ridge blend vs architecture-matched global-standardization control, fresh seeds 16-20",
+    "per_seed_deltas": {
+      "WM_proposed": [
+        0.0268,
+        0.0083,
+        0.0221,
+        -0.0136,
+        -0.0106
+      ],
+      "WM_control": [
+        0.0284,
+        0.007,
+        0.0172,
+        -0.0075,
+        -0.0141
+      ],
+      "FI_proposed": [
+        0.0079,
+        -0.0025,
+        0.0025,
+        0.0034,
+        -0.0175
+      ],
+      "FI_control": [
+        0.0089,
+        0.0054,
+        0.0028,
+        -0.0056,
+        -0.0204
+      ]
+    },
+    "means": {
+      "WM_proposed": 0.0066,
+      "WM_control": 0.0062,
+      "FI_proposed": -0.00124,
+      "FI_control": -0.00178
+    },
+    "positive_seeds": {
+      "WM_proposed": "3/5",
+      "WM_control": "3/5",
+      "FI_proposed": "3/5",
+      "FI_control": "3/5"
+    },
+    "conclusion": "FI fails P1 (-0.0012 < +0.005); the small WM gain is matched by its architecture-matched control (+0.0062), so the novel subject-relative representation adds no information beyond a heavy-ridge blend (a rejected 'different lambda' variant)."
+  },
+  "screen7_joint_selection": {
+    "seeds": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "WM_mean_delta": -0.0003,
+    "FI_mean_delta": 0.0043,
+    "conclusion": "Joint selection of representation, alpha, and weight on noisy inner OOF destroys the apparent gains."
+  },
+  "bank_screen_examples": {
+    "seeds": [
+      11,
+      12
+    ],
+    "ridge_fc": {
+      "WM_blended": [
+        0.0213,
+        0.0525
+      ],
+      "FI_blended": [
+        0.0004,
+        -0.0087
+      ]
+    },
+    "pcr100": {
+      "WM_blended": [
+        0.0184,
+        0.0436
+      ],
+      "FI_blended": [
+        0.0156,
+        -0.0152
+      ]
+    },
+    "knn40": {
+      "WM_blended": [
+        0.0122,
+        0.0103
+      ],
+      "FI_blended": [
+        -0.0044,
+        -0.0035
+      ]
+    },
+    "ridge_joint": {
+      "WM_blended": [
+        -0.0029,
+        0.0009
+      ],
+      "FI_blended": [
+        0.0034,
+        -0.001
+      ]
+    },
+    "conclusion": "WM-side families exist but do not transfer to FI; FI-side families are seed-unstable."
+  },
+  "families_rejected": [
+    "cross-view PLS/CCA latent scores",
+    "supervised PLS regression",
+    "reduced-rank regression",
+    "structural-diffusion (heat-kernel) features",
+    "population graph-Laplacian basis projection",
+    "per-subject rank normalization",
+    "cross-modal (FC-from-SC) residual features",
+    "kNN in supervised latent space",
+    "RBF kernel ridge",
+    "gradient-boosted trees (incl. Poisson loss)",
+    "random-subspace ridge ensembles",
+    "bagged ridge",
+    "elastic net",
+    "SVR",
+    "data-driven edge-cluster aggregates",
+    "per-subject z-scored edge ridge (subject-relative)",
+    "shrinkage precision (partial correlation)",
+    "SC effective resistance",
+    "signed/sqrt FC transforms",
+    "per-edge FCxSC products",
+    "node graph-topology descriptors",
+    "SC log/sqrt/binary transforms",
+    "multi-alpha ridge averaging",
+    "rank-target ridge",
+    "separable two-alpha FC/SC ridge"
+  ],
+  "reason_for_rejection": "Across 9 screens and ~60 genuinely distinct candidate predictors evaluated with honest nested blending on 10 fresh screening seeds, no method improved BOTH WM and FI by the predeclared +0.005 margin with the required seed stability. WM-side improvements (up to +0.05) never transferred to FI, and the one apparent FI-side signal (subject-relative normalization) failed to replicate on fresh seeds and was matched by its architecture-matched control. Running a locked evaluation of any candidate would be a cosmetic variant prohibited by the challenge rules."
+}

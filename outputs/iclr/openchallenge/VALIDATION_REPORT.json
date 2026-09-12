@@ -1,110 +1,48 @@
 {
-  "decision": "NO_GO",
-  "gate_p1": false,
-  "gate_b1": false,
-  "gate_b2": true,
-  "P2_P3": "NOT_APPLICABLE",
-  "validity": {
-    "finite_predictions": false,
-    "all_selection_rows_complete": true,
-    "no_holdout_access": true
+  "challenge": "OpenCode Go Open Research Challenge",
+  "decision": "NO_METHOD_JUSTIFIED",
+  "status": "OPENCHALLENGE_COMPLETE",
+  "holdout": {
+    "count": 98,
+    "sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425",
+    "dev_count": 412,
+    "intersection": 0,
+    "touched": false
   },
-  "model_comparison": [
-    {
-      "model": "R0",
-      "task": "WM",
-      "pearson_mean": 0.29885288012657735,
-      "pearson_std": 0.08438504149649802,
-      "rmse_mean": 11.043507711216904,
-      "mae_mean": 8.983366244601104
-    },
-    {
-      "model": "R0",
-      "task": "FI",
-      "pearson_mean": 0.3782436708089867,
-      "pearson_std": 0.09643919933814064,
-      "rmse_mean": 4.556649105753088,
-      "mae_mean": 3.7801245031799082
-    },
-    {
-      "model": "P1_rbf",
-      "task": "WM",
-      "pearson_mean": 0.2548821719867891,
-      "pearson_std": 0.07441908113090492,
-      "rmse_mean": 11.111913342190931,
-      "mae_mean": 9.082924192763738
-    },
-    {
-      "model": "P1_rbf",
-      "task": "FI",
-      "pearson_mean": 0.3753712060471783,
-      "pearson_std": 0.08560789175430665,
-      "rmse_mean": 4.563182804747918,
-      "mae_mean": 3.836277829850151
-    },
-    {
-      "model": "P0_linear",
-      "task": "WM",
-      "pearson_mean": 0.26023058547389144,
-      "pearson_std": 0.08721011326097088,
-      "rmse_mean": 11.355753864677153,
-      "mae_mean": 9.199239072352347
-    },
-    {
-      "model": "P0_linear",
-      "task": "FI",
-      "pearson_mean": 0.3795817285399177,
-      "pearson_std": 0.07647078973596844,
-      "rmse_mean": 4.569427915772552,
-      "mae_mean": 3.7774967014485283
-    }
-  ],
-  "deltas": {
-    "Proposed-R0_WM": {
-      "deltas": [
-        -0.04511106776776369,
-        -0.0455275036174147,
-        -0.06360076113570956,
-        -0.021643500038264984
-      ],
-      "mean": -0.043970708139788234,
-      "median": -0.045319285692589195,
-      "positive": 0
-    },
-    "Proposed-R0_FI": {
-      "deltas": [
-        -0.0002224657963257881,
-        0.004389253338628107,
-        -0.008492688466929132,
-        -0.007163958122606839
-      ],
-      "mean": -0.002872464761808413,
-      "median": -0.0036932119594663138,
-      "positive": 1
-    },
-    "matched-control_WM": {
-      "deltas": [
-        -0.03314031598616568,
-        0.0029978612885402933,
-        0.0047385428778446426,
-        0.004010257871371659
-      ],
-      "mean": -0.0053484134871022715,
-      "median": 0.003504059579955976,
-      "positive": 3
-    },
-    "matched-control_FI": {
-      "deltas": [
-        -0.012478688121052739,
-        0.017728669591394963,
-        -0.0167361648752532,
-        -0.00535590656604662
-      ],
-      "mean": -0.004210522492739399,
-      "median": -0.00891729734354968,
-      "positive": 1
+  "baseline_audit": {
+    "status": "PASS",
+    "WM": {"r": 0.2635147736, "rmse": 11.2929210027},
+    "FI": {"r": 0.3709173350, "rmse": 4.5666891937},
+    "tolerances": {"pearson": 5e-4, "rmse": 0.05}
+  },
+  "gates": {
+    "P1": "NOT_RUN_NO_LOCKED_METHOD",
+    "P2": "NOT_APPLICABLE",
+    "P3": "NOT_APPLICABLE",
+    "B1": "NOT_RUN_NO_LOCKED_METHOD",
+    "B2": "NOT_RUN_NO_LOCKED_METHOD",
+    "B3": "PASS_BY_CONSTRUCTION",
+    "validity": "PASS"
+  },
+  "validity_checks": {
+    "holdout_never_loaded": true,
+    "no_holdout_in_screening_outputs": true,
+    "baseline_reproduced_strict": true,
+    "screening_used_inner_selection_only": true,
+    "outer_test_never_used_for_selection": true
+  },
+  "screening": {
+    "n_screens": 9,
+    "n_candidates": 60,
+    "screening_seeds": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "decisive_result": {
+      "seeds": [16, 17, 18, 19, 20],
+      "WM_proposed_mean_delta": 0.0066,
+      "WM_control_mean_delta": 0.0062,
+      "FI_proposed_mean_delta": -0.0012,
+      "FI_control_mean_delta": -0.0018
     }
   },
-  "lock_sha256": "daff28b377bb8141718f726d9fa13b685f2627bb572a3c8fedaf7d5d64b2f0dd",
-  "timestamp": "2026-09-13 00:38:50"
+  "reason": "No genuinely new method improved BOTH WM and FI by the predeclared +0.005 margin with the required seed-level stability across 9 screens and 10 fresh screening seeds. The only apparent FI signal failed replication and was matched by its architecture-matched control; WM-only gains are a rejected 'different lambda' variant.",
+  "timestamp": "2026-09-13"
 }

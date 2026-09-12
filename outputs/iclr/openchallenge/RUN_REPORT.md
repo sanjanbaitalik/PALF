@@ -1,110 +1,139 @@
-# OpenChallenge CKE — RUN_REPORT
-
-Decision: `OPENCHALLENGE_DECISION: NO_GO`
-Status: `STATUS: OPENCHALLENGE_COMPLETE`
-
-Proposal lock: `MODEL_PROPOSAL_LOCK.md`
-SHA256 = `daff28b377bb8141718f726d9fa13b685f2627bb572a3c8fedaf7d5d64b2f0dd`
-(frozen before any outer-CV result of the locked method; only feasibility
-screens and the strict baseline audit were run before the lock)
-
----
-
-## A. Method chosen
-
-**CKE — Calibrated Kernel Ensemble.** Hypothesis: the unexploited signal on the
-412-subject cohort is a new *function class*, not a new edge representation. A
-bandwidth-controlled RBF kernel ridge predictor over standardized FC+SC edges
-captures smooth nonlinear (prototype/distance) structure that no linear model
-on any edge transform can represent, and a per-task, inner-CV-calibrated
-convex weight adds it on top of the unmodified corrected R0 baseline:
-
-```
-f_prop(x) = (1 - w) * f_R0(x) + w * f_KRR(x),  w ∈ {0, 0.1, ..., 1.0}
-f_KRR(x)  = b + Σ_i α_i exp(-||x - x_i||² / (2σ²)),
-σ = m · median pairwise distance (train scope), λ ∈ {0.3, 1, 3, 10},
-m ∈ {0.5, 1, 2}.  w = 0 nests R0 exactly.
-```
-
-No semantic LLM prior is used (`PRIOR_CLAIM_NOT_APPLICABLE`). Evidence base
-(pre-lock screens, all leakage-safe 5-fold OOF on development data): node
-topology, graph-spectral FC-on-SC-eigenbasis, reduced-rank ridge, and
-multi-view strength profiles all showed ZERO or negative complementarity with
-R0 residuals and optimal ensemble weight ≈ 0. Only the nonlinear-function-class
-screen showed positive complementarity (FI KRR own r 0.3668 > R0 0.3534,
-residual corr +0.063, pooled ensemble +0.032), which motivated the lock.
-
-## B. Holdout seal
-- 98 / 98 unique; SHA256 `89c56360...c425`; dev∩holdout = empty
-- Access log: 0 non-empty holdout overlaps; **holdout untouched**
-
-## C. Baseline audit (strict, seeds 0-9)
-WM r=0.2635147736 (err 2.3e-07), RMSE=11.2929210027 (err 2.7e-09) — PASS
-FI r=0.3709173350 (err 3.4e-07), RMSE=4.5666891937 (err 1.9e-07) — PASS
-
-## D. Implementation validity
-- R0 fused linear map reconstruction: max err 1.7e-13 (20/20 outer fits)
-- KRR dual solve: finite in all 1,560 recorded fits (solve_ok = True)
-- Attribution: analytic kernel gradients == finite differences (≤1e-4 rel);
-  linear-kernel control gradient == exact ridge primal map
-- Ensemble/units: `f = (1−w)·R0 + w·KRR` in raw target units; w=0 ⇒ exactly R0
-- OOF label alignment, train-scope-only scalers, deterministic partitions —
-  all covered by 18/18 functional tests (`tests/test_openchallenge.py`)
-
-## E. Development prediction results (20 outer fits)
-
-| Model | WM r | WM RMSE | FI r | FI RMSE |
-|-------|------|---------|------|---------|
-| R0 | **0.2989** | **11.044** | **0.3782** | **4.557** |
-| P1_rbf (proposed) | 0.2549 | 11.112 | 0.3754 | 4.563 |
-| P0_linear (control) | 0.2602 | 11.356 | 0.3796 | 4.569 |
-
-## F. Seed-level deltas
-- Proposed − R0: WM mean −0.0440, median −0.0453, 0/4 positive;
-  FI mean −0.0029, median −0.0037, 1/4 positive
-- Proposed − control: WM mean −0.0053, 3/4 positive; FI mean −0.0042, 1/4
-
-## G. Biomarker results
-- Stability (proposed vs control): edge Spearman WM 0.563 vs 0.495,
-  FI 0.537 vs 0.479; ROI top-10 Jaccard WM 0.385 vs 0.359;
-  sign consistency 0.865/0.867 (proposed WM/FI)
-- Faithfulness (top10 − random10 ΔRMSE): proposed WM +0.043, FI +0.054
-  (means positive) but seed-level positive counts 0/4 and 0/4
-- Task-specific contrast (own − cross): proposed WM +0.020, FI +0.067
-  (both positive); control WM −0.092, FI +0.011
-
-## H. Mechanistic interpretation
-The pooled pre-lock ensemble gain was real in-sample-complementarity but did
-not survive honest per-split inner-CV weight selection: the per-split optimal
-w is unstable (0.0–1.0 across folds) and the KRR component is on average
-worse than R0 out-of-sample (own OOF r below R0 on most splits), so the
-calibrated fusion inherits selection noise. What IS real: the kernel
-component's gradient attribution is more stable and more faithful than its
-linear twin (B2 PASS on 3/4 metrics per task), and the WM/FI attribution
-rankings are genuinely task-specific (positive contrast on both tasks). But
-neither property rescues prediction: Gate P1 fails on both tasks, and B1's
-seed-level consistency fails. Honest conclusion: at n=412 the calibrated
-kernel ensemble does not beat corrected R0 on BOTH tasks; the earlier screen
-gain was selection noise, and the biomarker advantage alone does not justify
-a freeze.
-
-## I. Gate table
-| Gate | Result |
-|------|--------|
-| P1 (beats R0) | FAIL (WM −0.044 0/4; FI −0.003 1/4) |
-| P2 (prior value) | NOT APPLICABLE |
-| P3 (specificity) | NOT APPLICABLE |
-| B1 (faithfulness seeds) | FAIL (means positive but 0/4 positive seeds) |
-| B2 (matched vs control biomarkers) | PASS |
-| B3 (no circularity) | PASS (by construction) |
-| validity | PASS |
-
-## J. Final decision
+# OpenChallenge — RUN REPORT
 
 ```text
-OPENCHALLENGE_DECISION: NO_GO
+OPENCHALLENGE_DECISION: NO_METHOD_JUSTIFIED
 STATUS: OPENCHALLENGE_COMPLETE
 ```
 
-The 98-subject holdout remains sealed. Model development on the 412-subject
-cohort stops here.
+Per prompt §9, the challenge was rejected **before coding a final method**: after
+inspecting the repository evidence and running an independent, honest screening
+programme, no genuinely new method has a scientifically plausible chance to
+improve BOTH WM and FI prediction by the predeclared margin while passing the
+biomarker specificity gates. Running any screened candidate under a lock would
+be a cosmetic variant prohibited by §20. See `MODEL_PROPOSAL_REJECTED.md`.
+
+---
+
+## A. Holdout status
+
+- count = 98; unique = 98
+- SHA256 = `89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425`
+- development cohort = 412; intersection = 0
+- **The 98-subject holdout was never loaded, inspected, or used in any way.**
+  Only development files were accessed. `HOLDOUT_SEAL_REPORT.json` records this.
+
+## B. Baseline audit (strict, seeds 0-9)
+
+| Task | Pearson r | RMSE | expected r | expected RMSE | result |
+|------|-----------|------|------------|---------------|--------|
+| WM | 0.2635147736 | 11.2929210027 | 0.263515 | 11.292921 | PASS |
+| FI | 0.3709173350 | 4.5666891937 | 0.370917 | 4.566689 | PASS |
+
+Errors ≤ 3.4e-07 (Pearson) and ≤ 1.9e-07 (RMSE). R0 was used unmodified; no
+search-space weakening.
+
+## C. Screening programme (the scientific work)
+
+Protocol: every candidate predictor was late-fused with R0 by a convex weight.
+**All selection happened on a 3-fold inner OOF inside the outer-training
+scope**; the outer-test fold was untouched. Screening seeds 11–20 are fresh
+development seeds, not the locked seeds.
+
+Candidate families screened (60 predictors, 9 screens):
+
+1. Cross-view PLS/CCA latent scores; supervised PLS (K = 2, 5, 10, 20).
+2. Reduced-rank regression (rank 2–16).
+3. Structural-diffusion (heat-kernel) features of SC at τ = 0.5, 1, 2.
+4. Population graph-Laplacian eigenbasis projections of FC and SC.
+5. Per-subject rank normalization; per-subject z-scoring (subject-relative).
+6. Cross-modal FC-from-SC residual features (with/without SC).
+7. kNN regression in supervised latent space (k = 15, 20, 40).
+8. RBF kernel ridge and SVR.
+9. Gradient-boosted trees (L2 and Poisson losses); random forests were not run.
+10. Random-subspace ridge (100 subspaces, 10% features); bagged ridge.
+11. Elastic net; rank-target ridge; separable two-alpha FC/SC ridge.
+12. Data-driven edge-cluster aggregates (K = 50, 200).
+13. Shrinkage precision (partial correlation); SC effective resistance.
+14. Node graph-topology descriptors (strength, clustering, centrality).
+15. SC log/sqrt/binary transforms; signed/sqrt FC; per-edge FC×SC products.
+16. Multi-alpha ridge averaging.
+
+Full results: `screening/screening_evidence.json`, `screening/` logs.
+
+### What was found
+
+- **WM has local headroom; FI does not.** Strong-ridge FC features (+0.02..+0.05),
+  PCR-100 (+0.02..+0.04), kNN (+0.01), per-subject z-scored FC (+0.014, 4/4
+  seeds on 11–14), and count-GLM (+0.01) improved WM on individual screens.
+  No candidate improved FI stably; the largest FI effects were ≤ +0.006 and
+  sign-flipped on the next seed.
+- **Apparent gains failed replication and control matching.** The one
+  apparently robust FI signal (subject-relative normalization, +0.0108 over
+  seeds 11–14, 4/4) failed on fresh seeds 16–20: FI proposed −0.0012 vs its
+  architecture-matched control −0.0018; WM proposed +0.0066 vs control +0.0062.
+  The control isolates the only novel ingredient, and it contributes nothing.
+- **Joint selection collapses the gains.** Selecting representation, ridge
+  strength, and blend weight jointly on inner OOF (screen #7) gives
+  WM −0.0003 and FI +0.0043 — the apparent gains live in selection noise.
+
+## D. Why this is the correct decision
+
+The predeclared Gate P1 requires, on BOTH tasks: mean(Proposed − R0) ≥ +0.005,
+≥3/4 seeds positive, and ≥ +0.010 on at least one task. Across the entire
+screened space these thresholds are not met on FI under any candidate; the WM
+effects that exist are matched by architecture-matched controls and/or are
+"different lambda" regularization variants explicitly excluded by §7. The
+biomarker gates require a locked model whose biomarker object can be validated;
+without a prediction-passing model there is no justified object to lock.
+
+This mirrors and extends the repository's own falsification of families A–G
+(the lead finding — R0 is at/near the reliable ceiling for this 412-subject
+cohort — is confirmed independently).
+
+## E. Prediction results
+
+Not applicable: no method was locked or run, so there are no Proposed/P0/P1
+development results to report. R0 itself was audited and reproduced exactly.
+
+## F. Biomarker results
+
+Not applicable (no locked method). The rejection was made before any
+biomarker claim was generated.
+
+## G. Gate table
+
+| Gate | Result |
+|------|--------|
+| P1 (beats R0, both tasks) | NOT RUN — NO LOCKED METHOD |
+| P2 (semantic prior value) | NOT APPLICABLE (no semantic prior) |
+| P3 (specificity) | NOT APPLICABLE |
+| B1 (held-out faithfulness) | NOT RUN — NO LOCKED METHOD |
+| B2 (architecture-matched biomarker advantage) | NOT RUN — NO LOCKED METHOD |
+| B3 (no circularity) | PASS (by construction; no biomarker claim made) |
+| validity / leakage | PASS (holdout untouched; audit strict) |
+
+## H. Mechanistic interpretation
+
+Two robust facts from the screens:
+
+1. R0's FI branch (SC ridge plus fusion) is at the reliable ceiling of the
+   tested representation space. FI prediction barely responds to any change of
+   representation, kernel, or estimator at n=412, and its small residuals do
+   not carry extractable signal (candidate-vs-residual correlations at or
+   below zero).
+2. WM has modest, real headroom over R0, but it is shared across many
+   regularization variants of the same raw-edge features. It does not
+   constitute a new source of generalizable signal and it does not transfer
+   to FI, so it cannot satisfy the joint gate.
+
+## I. Outputs
+
+- `HOLDOUT_SEAL_REPORT.json`, `BASELINE_AUDIT.json`, `VALIDATION_REPORT.json`
+- `MODEL_PROPOSAL_REJECTED.md` (pre-coding rejection, per §9)
+- `RUN_REPORT.md`, `COMPLETE`
+- `screening/screening_evidence.json` + screen logs
+- `tests/` functional tests (seal, audit, honest-nesting invariants)
+- `plots/` screening summary
+- `predictions/`, `biomarkers/`, `controls/`, `coefficients_or_attributions/`
+  are NOT APPLICABLE (no locked method); each contains a README note.
+- `outputs/iclr/openchallenge.zip`
