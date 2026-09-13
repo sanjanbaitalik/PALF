@@ -1,0 +1,48 @@
+{
+  "n_subjects": 510,
+  "n_unique": 510,
+  "cohort": "final510 = D412 union D98 (combined processed subjects)",
+  "availability": {
+    "fc_all_finite": true,
+    "sc_all_finite": true,
+    "wm_labels_finite": true,
+    "n_edges": 6670,
+    "n_rois": 116,
+    "unique_subjects": 510,
+    "d412_prefix_ok": true,
+    "d98_suffix_ok": true,
+    "fc_shape": [
+      510,
+      6670
+    ],
+    "sc_shape": [
+      510,
+      6670
+    ]
+  },
+  "manifest_sha256": "070188ff3a060b9003160b343c74db10fb51b243b43d77feaf126c80ccb62ca2",
+  "prior_hashes": {
+    "matched": {
+      "path": "outputs/priors/llm/working_memory_contrastive_qwen3/roi_prior.csv",
+      "sha256": "129bc52090b79b766d3ad52634ffbe197b422634e86829787b373c11a3012c12",
+      "n": 116
+    },
+    "cross": {
+      "path": "outputs/priors/llm/fluid_intelligence_contrastive_qwen3/roi_prior.csv",
+      "sha256": "379841f12e763df560f263da5cdb2e9520715ffde30488e306a1c686032e4864",
+      "n": 116
+    },
+    "shuffled": {
+      "path": "outputs/priors/llm/working_memory_contrastive_qwen3_shuffled/roi_prior.csv",
+      "sha256": "89c273d8662f632e3cba64baf449696a8716c11f2c1d82a9d840b0c77aae46ea",
+      "n": 116
+    },
+    "random": {
+      "path": "outputs/priors/random_prior/aal116/roi_prior.csv",
+      "sha256": "b91807e4a0f8963ef1be63f4f28b931660831ff12dbc66b2ab8e73642f7a0c18",
+      "n": 116
+    }
+  },
+  "aal116_ordering": "AAL116 index order 1..116 as in ROI prior tables",
+  "timestamp": "2026-09-13 15:52:19"
+}

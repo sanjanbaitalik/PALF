@@ -1,0 +1,15 @@
+{
+  "reused_results": [],
+  "cross_checks": [],
+  "decision": "NO_RESULTS_REUSED",
+  "reason": "The v34 510-secondary run covers only seed 7171 and models A0/A1/B1 without coefficient artifacts, while the final510 study requires 5 seeds, 9 architecture-matched models, and per-fold coefficient maps for biomarkers.",
+  "v34_file": "outputs/iclr/palf_412_vs_510_scaling/full510_secondary_metrics.csv",
+  "v34_models": [
+    "A0",
+    "A1",
+    "B1"
+  ],
+  "v34_seeds": [
+    7171
+  ]
+}

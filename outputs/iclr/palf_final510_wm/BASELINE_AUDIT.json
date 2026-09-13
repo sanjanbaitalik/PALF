@@ -1,0 +1,13 @@
+{
+  "task": "WM",
+  "protocol": "R0Baseline (corrected same-solver) seeds 0-9, 5 outer folds on the 412 development cohort",
+  "pearson": 0.26351477359024317,
+  "rmse": 11.292921002711036,
+  "expected_pearson": 0.263515,
+  "expected_rmse": 11.292921,
+  "tolerance": {
+    "pearson": 0.0005,
+    "rmse": 0.05
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,87 @@
+{
+  "method": "SPSEF (Semantic Prior-Selected Expert Fusion)",
+  "model_aliases": {
+    "A0": "R0 (corrected no-prior backbone)",
+    "A1": "R-MATCHED (SPSEF-Ridge, ratio=0)",
+    "A2": "N-MATCHED (SPSEF-NCR, frozen ratio grid)"
+  },
+  "variants": [
+    "SPSEF-Ridge (ratio=0)",
+    "SPSEF-NCR (frozen ratio grid)"
+  ],
+  "architecture_matched_controls": {
+    "ridge": [
+      "R-MATCHED",
+      "R-CROSS",
+      "R-SHUFFLED",
+      "R-RANDOM"
+    ],
+    "ncr": [
+      "N-MATCHED",
+      "N-CROSS",
+      "N-SHUFFLED",
+      "N-RANDOM"
+    ]
+  },
+  "backbone": "corrected same-solver R0 (FP + SC Ridge + cross-fitted convex fusion)",
+  "masks": {
+    "direct_topk_K": [
+      100,
+      300,
+      600,
+      1200
+    ],
+    "roi_incident_M": [
+      5,
+      10,
+      15
+    ]
+  },
+  "ridge_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1,
+    10,
+    100,
+    1000
+  ],
+  "ncr_ratio_grid": [
+    0.0,
+    0.1,
+    0.3,
+    1.0
+  ],
+  "fusion_grid": "v, alpha in {0,0.05,...,1} selected on training OOF only",
+  "cv": {
+    "outer_seeds": [
+      7171,
+      7272,
+      7373,
+      7474,
+      7575
+    ],
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "cohort": 510
+  },
+  "priors": {
+    "matched": {
+      "path": "outputs/priors/llm/working_memory_contrastive_qwen3/roi_prior.csv",
+      "sha256": "129bc52090b79b766d3ad52634ffbe197b422634e86829787b373c11a3012c12"
+    },
+    "cross": {
+      "path": "outputs/priors/llm/fluid_intelligence_contrastive_qwen3/roi_prior.csv",
+      "sha256": "379841f12e763df560f263da5cdb2e9520715ffde30488e306a1c686032e4864"
+    },
+    "shuffled": {
+      "path": "outputs/priors/llm/working_memory_contrastive_qwen3_shuffled/roi_prior.csv",
+      "sha256": "89c273d8662f632e3cba64baf449696a8716c11f2c1d82a9d840b0c77aae46ea"
+    },
+    "random": {
+      "path": "outputs/priors/random_prior/aal116/roi_prior.csv",
+      "sha256": "b91807e4a0f8963ef1be63f4f28b931660831ff12dbc66b2ab8e73642f7a0c18"
+    }
+  },
+  "claim_boundary": "repeated nested CV within the 510-subject cohort; NOT independent external validation"
+}

@@ -1,0 +1,34 @@
+{
+  "prediction_level": {
+    "RIDGE_PREDICTION_LEVEL": "P1",
+    "r_matched": 0.2439394255602847,
+    "r0": 0.2429745469736274,
+    "delta_r_mean": 0.0009648785866573084,
+    "positive_seeds": 3,
+    "beats_controls_mean": true,
+    "control_positive_seeds": {
+      "R-CROSS": 2,
+      "R-SHUFFLED": 4,
+      "R-RANDOM": 4
+    },
+    "beats_shuffled_random_4of5": true
+  },
+  "biomarker_levels": {
+    "R": {
+      "level": "B0",
+      "top10_minus_random10": -0.001723967205072987,
+      "positive_seed_contrasts": 1,
+      "criteria": {}
+    },
+    "N": {
+      "level": "B0",
+      "top10_minus_random10": -0.171183417544498,
+      "positive_seed_contrasts": 0,
+      "criteria": {}
+    }
+  },
+  "paper_status": "EXPLORATORY_WM_METHOD_PAPER",
+  "primary_estimand": "mean seed-wise outer-CV Pearson",
+  "transparency": "> All reported performance estimates are obtained by repeated nested cross-validation within the final 510-subject cohort; no separate external validation cohort is claimed.",
+  "timestamp": "2026-09-13 17:16:46"
+}

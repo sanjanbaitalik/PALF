@@ -1,0 +1,45 @@
+============================= test session starts ==============================
+collecting ... collected 34 items
+
+tests/test_final510_wm.py::test_510_unique_subjects PASSED               [  2%]
+tests/test_final510_wm.py::test_wm_labels_aligned PASSED                 [  5%]
+tests/test_final510_wm.py::test_corrected_r0_only PASSED                 [  8%]
+tests/test_final510_wm.py::test_outer_split_leakage_absent PASSED        [ 11%]
+tests/test_final510_wm.py::test_inner_preprocessing_train_only PASSED    [ 14%]
+tests/test_final510_wm.py::test_ridge_controls_identical_architecture PASSED [ 17%]
+tests/test_final510_wm.py::test_ncr_controls_identical_architecture PASSED [ 20%]
+tests/test_final510_wm.py::test_only_prior_arrays_differ PASSED          [ 23%]
+tests/test_final510_wm.py::test_frozen_prior_hashes PASSED               [ 26%]
+tests/test_final510_wm.py::test_ratio0_equals_ridge PASSED               [ 29%]
+tests/test_final510_wm.py::test_alpha0_equals_r0 PASSED                  [ 32%]
+tests/test_final510_wm.py::test_v_endpoints PASSED                       [ 35%]
+tests/test_final510_wm.py::test_no_outer_test_tuning PASSED              [ 38%]
+tests/test_final510_wm.py::test_coefficient_reconstruction PASSED        [ 41%]
+tests/test_final510_wm.py::test_abstained_maps_excluded PASSED           [ 44%]
+tests/test_final510_wm.py::test_faithfulness_rankings_train_only PASSED  [ 47%]
+tests/test_final510_wm.py::test_perturbation_no_retraining PASSED        [ 50%]
+tests/test_final510_wm.py::test_perturbation_uses_train_means PASSED     [ 52%]
+tests/test_final510_wm.py::test_delta_rmse_sign_correct PASSED           [ 55%]
+tests/test_final510_wm.py::test_random_masks_deterministic PASSED        [ 58%]
+tests/test_final510_wm.py::test_stability_columns_present PASSED         [ 61%]
+tests/test_final510_wm.py::test_main_metric_is_mean_seedwise PASSED      [ 64%]
+tests/test_final510_wm.py::test_ensemble_sensitivity_separate PASSED     [ 67%]
+tests/test_final510_wm.py::test_paper_tables_agree_with_csvs PASSED      [ 70%]
+tests/test_final510_wm.py::test_figures_use_actual_values PASSED         [ 73%]
+tests/test_final510_wm.py::test_no_external_validation_wording PASSED    [ 76%]
+tests/test_final510_wm.py::test_no_412_vs_510_in_main_paper_ready PASSED [ 79%]
+tests/test_final510_wm.py::test_dev_history_note_no_confirmation PASSED  [ 82%]
+tests/test_final510_wm.py::test_novelty_grounded PASSED                  [ 85%]
+tests/test_final510_wm.py::test_illustrative_examples_trace PASSED       [ 88%]
+tests/test_final510_wm.py::test_full_report_includes_negative_ablations PASSED [ 91%]
+tests/test_final510_wm.py::test_decision_logic_consistent PASSED         [ 94%]
+tests/test_final510_wm.py::test_ratio_ablation_outer PASSED              [ 97%]
+tests/test_final510_wm.py::test_complete_package_artifacts PASSED        [100%]
+
+=============================== warnings summary ===============================
+../../../../miniforge3/lib/python3.14/site-packages/torch/jit/_script.py:1485
+  /home/genaicoe/miniforge3/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 34 passed, 1 warning in 2.10s =========================

@@ -1,0 +1,47 @@
+{
+  "r0_audit_status": "PASS",
+  "max_final_reconstruction_error": 1.5347723092418164e-12,
+  "max_r0_map_reconstruction_error": 7.247535904753022e-13,
+  "reconstruction_tolerance": 1e-08,
+  "outer_split_leakage_any": false,
+  "n_folds": 25,
+  "n_models": 8,
+  "prior_sha256": {
+    "matched": "129bc52090b79b766d3ad52634ffbe197b422634e86829787b373c11a3012c12",
+    "cross": "379841f12e763df560f263da5cdb2e9520715ffde30488e306a1c686032e4864",
+    "shuffled": "89c273d8662f632e3cba64baf449696a8716c11f2c1d82a9d840b0c77aae46ea",
+    "random": "b91807e4a0f8963ef1be63f4f28b931660831ff12dbc66b2ab8e73642f7a0c18"
+  },
+  "banned_wording_hits": {},
+  "rdige_prediction_level": {
+    "RIDGE_PREDICTION_LEVEL": "P1",
+    "r_matched": 0.2439394255602847,
+    "r0": 0.2429745469736274,
+    "delta_r_mean": 0.0009648785866573084,
+    "positive_seeds": 3,
+    "beats_controls_mean": true,
+    "control_positive_seeds": {
+      "R-CROSS": 2,
+      "R-SHUFFLED": 4,
+      "R-RANDOM": 4
+    },
+    "beats_shuffled_random_4of5": true
+  },
+  "biomarker_levels": {
+    "R": {
+      "level": "B0",
+      "top10_minus_random10": -0.001723967205072987,
+      "positive_seed_contrasts": 1,
+      "criteria": {}
+    },
+    "N": {
+      "level": "B0",
+      "top10_minus_random10": -0.171183417544498,
+      "positive_seed_contrasts": 0,
+      "criteria": {}
+    }
+  },
+  "paper_status": "EXPLORATORY_WM_METHOD_PAPER",
+  "primary_estimand": "mean seed-wise outer-CV Pearson",
+  "sensitivity_estimand": "ensemble Pearson after averaging repeated-CV predictions (not primary)"
+}

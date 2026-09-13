@@ -1,0 +1,3 @@
+# Development history note (supplementary)
+
+Substantial method development preceded the final 510-subject study. Earlier exploratory configurations, forensic audits, and negative development results are retained separately in the repository for reproducibility (for example, prior PALF/PS-NCR development outputs and the 412-vs-510 scaling study). Those artifacts are development history, not results of the final paper. Because model selection for this paper was finalized within the same cohort used for estimation, the final results should be interpreted as within-cohort cross-validation rather than external confirmation.

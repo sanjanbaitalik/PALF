@@ -1,0 +1,27 @@
+{
+  "benchmark_seconds": {
+    "matched_masks": 2.7,
+    "R-MATCHED": 3.9,
+    "R-CROSS": 5.1,
+    "R-SHUFFLED": 5.7,
+    "R-RANDOM": 4.9,
+    "N-MATCHED": 33.5,
+    "N-CROSS": 29.2,
+    "N-SHUFFLED": 48.7,
+    "N-RANDOM": 33.3,
+    "total": 176.1,
+    "perturbation_workload_two_models_one_fold": 1.0
+  },
+  "stage_seconds": {
+    "Stage_A_audit": 299.0,
+    "benchmark_fold": 177.0,
+    "Stage_BC_main": 3546.0,
+    "Stage_DE_biomarker": 82.0,
+    "Stage_F_ablations": 0.0,
+    "Stage_ratio_sweep": 191.0,
+    "reports": 19.0
+  },
+  "total_seconds": 4314.0,
+  "estimate_md": "outputs/iclr/palf_final510_wm/RUNTIME_ESTIMATE.md",
+  "note": "Stages B/C actual runtime is under the pre-run benchmark ETA because selected masks were compact."
+}
