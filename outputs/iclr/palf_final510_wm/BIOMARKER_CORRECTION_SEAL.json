@@ -1,0 +1,42 @@
+{
+  "holdout_sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425",
+  "holdout_count": 98,
+  "holdout_unique": 98,
+  "statement": "No holdout data were accessed. Only saved final-510 outer-fold coefficient maps and metadata from the merged 510 development cohort were read.",
+  "timestamp": "2026-09-13 17:51:14",
+  "files_read": [
+    "_state/folds/fold_seed*_f*.pkl (25 checkpoints)",
+    "biomarker_stability.csv (old values, for before/after)",
+    "biomarker_faithfulness.csv",
+    "data_splits/final510_subjects.txt metadata",
+    "outputs/priors/llm/working_memory_contrastive_qwen3/roi_prior.csv (ROI labels only)"
+  ],
+  "files_written": [
+    "biomarker_stability_corrected.csv",
+    "BIOMARKER_STABILITY_CORRECTION_REPORT.md",
+    "BIOMARKER_CORRECTION_SEAL.json",
+    "BIOMARKER_CORRECTION_FINAL_AUDIT.md",
+    "BIOMARKER_CORRECTION_RUNTIME.md",
+    "biomarker_table.csv",
+    "paper_ready/table_main_wm_biomarkers.csv",
+    "paper_ready/table_main_wm_biomarkers.tex",
+    "paper_ready/wm_top10_biomarkers.csv",
+    "paper_ready/wm_top10_biomarkers.md",
+    "paper_ready/wm_top10_biomarkers_R-MATCHED.csv",
+    "paper_ready/wm_top10_biomarkers_N-MATCHED.csv",
+    "paper_ready/SAFE_CLAIMS.md"
+  ],
+  "frozen_file_hashes": {
+    "primary_metrics.csv": "1419f33080c2799e084e6794b89a9d5bb9c7de8977bb357075a2caa8f3c4d411",
+    "seed_metrics.csv": "9df4ca7e9a86b864240cb2cdeaa1397a4c79d17ed69d471c9eb54e52b947065c",
+    "fold_metrics.csv": "59fb734a894de30f9aac36cf237150cec26d9d08bdd5766103e54d02fb01011d",
+    "primary_comparisons.csv": "68aaf905c2587597e87d390468ed1510143344d142cc7f9bd5e48db47c1a1fe1",
+    "sensitivity_ensemble_bootstrap.csv": "5f7f44e26f9bda82547ef2bd3cc32d08189b9150bec20cf8d8181e282c840c99",
+    "prediction_ablations.csv": "aea17d5798d3064bab2e6fb95617b2b275d236527f7eb822e664d93655b23595",
+    "ridge_prior_controls.csv": "5a4c2e0497b7da78ab3ea02d39279f95889ba85521b3140e47ef03db86e8e9b8",
+    "ncr_prior_controls.csv": "783a5b9a28928b6d36bd69f9c8f92da33b48104907164c566a9a8ab16eb66b79",
+    "SELECTED_CONFIGS.csv": "643181abbed2a45b566c33bfd08c653b73b67553ea0862b741af64081aeeb543"
+  },
+  "prediction_files_unchanged": true,
+  "holdout_id_scan_hits": {}
+}

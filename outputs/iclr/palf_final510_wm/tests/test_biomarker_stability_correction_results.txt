@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+collecting ... collected 18 items
+
+tests/test_biomarker_stability_correction.py::test_t1_fc_importance_uses_fc_only PASSED [  5%]
+tests/test_biomarker_stability_correction.py::test_t2_sc_importance_uses_sc_only PASSED [ 11%]
+tests/test_biomarker_stability_correction.py::test_t3_multimodal_equals_fc_plus_sc PASSED [ 16%]
+tests/test_biomarker_stability_correction.py::test_t4_fc_and_sc_top10_can_differ PASSED [ 22%]
+tests/test_biomarker_stability_correction.py::test_t5_jaccard_correct PASSED [ 27%]
+tests/test_biomarker_stability_correction.py::test_t6_all_zero_modality_has_no_ranking PASSED [ 33%]
+tests/test_biomarker_stability_correction.py::test_t7_inactive_modality_fold_excluded PASSED [ 38%]
+tests/test_biomarker_stability_correction.py::test_t8_multimodal_valid_with_one_inactive_modality PASSED [ 44%]
+tests/test_biomarker_stability_correction.py::test_t9_edge_ordering_unchanged PASSED [ 50%]
+tests/test_biomarker_stability_correction.py::test_t10_coefficient_reconstruction_exact PASSED [ 55%]
+tests/test_biomarker_stability_correction.py::test_t11_no_model_fitting_in_correction_script PASSED [ 61%]
+tests/test_biomarker_stability_correction.py::test_t12_no_prediction_file_modified PASSED [ 66%]
+tests/test_biomarker_stability_correction.py::test_t13_no_holdout_access PASSED [ 72%]
+tests/test_biomarker_stability_correction.py::test_t14_paper_ready_table_equals_corrected_csv PASSED [ 77%]
+tests/test_biomarker_stability_correction.py::test_t15_figure_uses_corrected_values PASSED [ 83%]
+tests/test_biomarker_stability_correction.py::test_t16_top10_traces_to_saved_coefficients PASSED [ 88%]
+tests/test_biomarker_stability_correction.py::test_t17_required_columns_present PASSED [ 94%]
+tests/test_biomarker_stability_correction.py::test_t18_biomarker_level_unchanged_b0 PASSED [100%]
+
+=============================== warnings summary ===============================
+../../../../miniforge3/lib/python3.14/site-packages/torch/jit/_script.py:1485
+  /home/genaicoe/miniforge3/lib/python3.14/site-packages/torch/jit/_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 18 passed, 1 warning in 1.92s =========================

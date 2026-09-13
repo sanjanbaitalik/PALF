@@ -31,14 +31,14 @@ Tier P3 requires positive mean deltas against all controls and >=4/5 positive se
 
 Coefficient stability across valid outer folds under architecture-matched priors is summarised below (see Table 5):
 
-- R-MATCHED: FC Spearman 0.723, SC Spearman nan, multimodal top10 Jaccard 0.480, sign consistency 0.847.
-- R-CROSS: FC Spearman 0.652, SC Spearman nan, multimodal top10 Jaccard 0.514, sign consistency 0.906.
+- R-MATCHED: FC Spearman 0.723, SC Spearman 0.554, multimodal top10 Jaccard 0.480, sign consistency 0.942.
+- R-CROSS: FC Spearman 0.652, SC Spearman 0.529, multimodal top10 Jaccard 0.514, sign consistency 0.915.
 - R-SHUFFLED: FC Spearman 0.522, SC Spearman 0.503, multimodal top10 Jaccard 0.549, sign consistency 0.939.
-- R-RANDOM: FC Spearman 0.601, SC Spearman nan, multimodal top10 Jaccard 0.502, sign consistency 0.863.
-- N-MATCHED: FC Spearman 0.698, SC Spearman nan, multimodal top10 Jaccard 0.387, sign consistency 0.901.
-- N-CROSS: FC Spearman 0.629, SC Spearman nan, multimodal top10 Jaccard 0.442, sign consistency 0.904.
+- R-RANDOM: FC Spearman 0.601, SC Spearman 0.671, multimodal top10 Jaccard 0.502, sign consistency 0.940.
+- N-MATCHED: FC Spearman 0.698, SC Spearman 0.547, multimodal top10 Jaccard 0.387, sign consistency 0.941.
+- N-CROSS: FC Spearman 0.629, SC Spearman 0.518, multimodal top10 Jaccard 0.442, sign consistency 0.921.
 - N-SHUFFLED: FC Spearman 0.519, SC Spearman 0.501, multimodal top10 Jaccard 0.549, sign consistency 0.933.
-- N-RANDOM: FC Spearman 0.593, SC Spearman nan, multimodal top10 Jaccard 0.439, sign consistency 0.887.
+- N-RANDOM: FC Spearman 0.593, SC Spearman 0.662, multimodal top10 Jaccard 0.439, sign consistency 0.943.
 
 ## 31.5 Biomarker faithfulness
 

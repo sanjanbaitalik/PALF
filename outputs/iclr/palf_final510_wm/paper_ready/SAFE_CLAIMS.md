@@ -7,3 +7,5 @@
 - "Matched-prior biomarker maps did not show cross-fold faithfulness on this cohort."
 
 - "All performance estimates are nested cross-validation results within a 510-subject cohort; no independent external validation is claimed."
+
+- Corrected modality-specific biomarker stability values (see BIOMARKER_STABILITY_CORRECTION_REPORT.md) do not change the B0 biomarker tier, which is determined by cross-fold perturbation faithfulness.

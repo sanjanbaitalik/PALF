@@ -201,6 +201,8 @@ def biomarker_tables(stab, faith):
             "edge_rank_stability": float(np.nanmean(
                 [s["fc_edge_spearman"].mean(), s["sc_edge_spearman"].mean()])) if len(s) else np.nan,
             "multimodal_top10_roi_jaccard": float(s["multimodal_top10_roi_jaccard"].mean()) if len(s) else np.nan,
+            "fc_top10_roi_jaccard": float(s["fc_top10_roi_jaccard"].mean()) if len(s) else np.nan,
+            "sc_top10_roi_jaccard": float(s["sc_top10_roi_jaccard"].mean()) if len(s) else np.nan,
             "top10_roi_jaccard": float(np.nanmean(
                 [s["fc_top10_roi_jaccard"].mean(), s["sc_top10_roi_jaccard"].mean(),
                  s["multimodal_top10_roi_jaccard"].mean()])) if len(s) else np.nan,
@@ -704,16 +706,27 @@ def fig_stability(bm):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4))
-    for ax, arch in zip(axes, ("ridge", "ncr")):
+    fig, axes = plt.subplots(2, 2, figsize=(12, 7.5))
+    for col, arch in enumerate(("ridge", "ncr")):
         sub = bm[bm.arch == arch]
         x = np.arange(len(sub))
-        ax.bar(x - 0.2, sub["edge_rank_stability"], 0.4, label="edge-rank stability")
-        ax.bar(x + 0.2, sub["top10_roi_jaccard"], 0.4, label="top10 ROI Jaccard")
+        ax = axes[0, col]
+        ax.bar(x - 0.2, sub["fc_edge_spearman"], 0.4, label="FC edge Spearman")
+        ax.bar(x + 0.2, sub["sc_edge_spearman"], 0.4, label="SC edge Spearman")
         ax.set_xticks(x); ax.set_xticklabels(sub["prior"], fontsize=8)
-        ax.set_ylim(0, 1); ax.set_title(f"{arch.capitalize()} architecture")
+        ax.set_ylim(0, 1)
+        ax.set_title(f"{arch.capitalize()}: edge-rank stability", fontsize=9)
         ax.legend(fontsize=7)
-    fig.suptitle("WM biomarker stability under architecture-matched priors", fontsize=9)
+        ax = axes[1, col]
+        ax.bar(x - 0.25, sub["fc_top10_roi_jaccard"], 0.25, label="FC top10 ROI")
+        ax.bar(x, sub["sc_top10_roi_jaccard"], 0.25, label="SC top10 ROI")
+        ax.bar(x + 0.25, sub["multimodal_top10_roi_jaccard"], 0.25,
+               label="multimodal top10 ROI")
+        ax.set_xticks(x); ax.set_xticklabels(sub["prior"], fontsize=8)
+        ax.set_ylim(0, 1)
+        ax.set_title(f"{arch.capitalize()}: top-10 ROI Jaccard", fontsize=9)
+        ax.legend(fontsize=7)
+    fig.suptitle("WM biomarker stability (modality-specific, corrected)", fontsize=10)
     fig.tight_layout()
     _save(fig, str(PLOTS / "fig5_wm_biomarker_stability"))
     _save(fig, str(PR / "fig5_wm_biomarker_stability"))
@@ -1278,7 +1291,9 @@ def main():
     ctrl = control_tables(recs, y)
     write_core_tables(recs, y, seed_df, fold_df, prim, sens, comp, sel, ctrl)
 
-    stab = pd.read_csv(OUT / "biomarker_stability.csv")
+    stab_path = OUT / "biomarker_stability_corrected.csv"
+    stab = pd.read_csv(stab_path if stab_path.exists()
+                       else OUT / "biomarker_stability.csv")
     faith = pd.read_csv(OUT / "biomarker_faithfulness.csv")
     bm = biomarker_tables(stab, faith)
     bm.to_csv(OUT / "biomarker_table.csv", index=False)

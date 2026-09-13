@@ -42,4 +42,4 @@ tests/test_final510_wm.py::test_complete_package_artifacts PASSED        [100%]
     warnings.warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-======================== 34 passed, 1 warning in 2.10s =========================
+======================== 34 passed, 1 warning in 1.97s =========================

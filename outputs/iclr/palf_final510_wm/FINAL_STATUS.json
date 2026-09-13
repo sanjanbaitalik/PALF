@@ -30,5 +30,5 @@
   "paper_status": "EXPLORATORY_WM_METHOD_PAPER",
   "primary_estimand": "mean seed-wise outer-CV Pearson",
   "transparency": "> All reported performance estimates are obtained by repeated nested cross-validation within the final 510-subject cohort; no separate external validation cohort is claimed.",
-  "timestamp": "2026-09-13 17:16:46"
+  "timestamp": "2026-09-13 17:49:31"
 }

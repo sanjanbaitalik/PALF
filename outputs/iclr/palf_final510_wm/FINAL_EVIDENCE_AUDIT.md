@@ -1,7 +1,7 @@
 # FINAL 510 WM evidence audit
 
 ## A. Runtime
-- total report+analysis time: 19s
+- total report+analysis time: 20s
 
 ## B. Cohort
 - n = 510 unique subjects; see COHORT_AUDIT.json
@@ -35,14 +35,14 @@
 
 ## G. Biomarker stability
 
-- R-MATCHED: FC Spearman 0.723, SC Spearman nan, top10 Jaccard 0.480, sign 0.847
-- R-CROSS: FC Spearman 0.652, SC Spearman nan, top10 Jaccard 0.514, sign 0.906
+- R-MATCHED: FC Spearman 0.723, SC Spearman 0.554, top10 Jaccard 0.480, sign 0.942
+- R-CROSS: FC Spearman 0.652, SC Spearman 0.529, top10 Jaccard 0.514, sign 0.915
 - R-SHUFFLED: FC Spearman 0.522, SC Spearman 0.503, top10 Jaccard 0.549, sign 0.939
-- R-RANDOM: FC Spearman 0.601, SC Spearman nan, top10 Jaccard 0.502, sign 0.863
-- N-MATCHED: FC Spearman 0.698, SC Spearman nan, top10 Jaccard 0.387, sign 0.901
-- N-CROSS: FC Spearman 0.629, SC Spearman nan, top10 Jaccard 0.442, sign 0.904
+- R-RANDOM: FC Spearman 0.601, SC Spearman 0.671, top10 Jaccard 0.502, sign 0.940
+- N-MATCHED: FC Spearman 0.698, SC Spearman 0.547, top10 Jaccard 0.387, sign 0.941
+- N-CROSS: FC Spearman 0.629, SC Spearman 0.518, top10 Jaccard 0.442, sign 0.921
 - N-SHUFFLED: FC Spearman 0.519, SC Spearman 0.501, top10 Jaccard 0.549, sign 0.933
-- N-RANDOM: FC Spearman 0.593, SC Spearman nan, top10 Jaccard 0.439, sign 0.887
+- N-RANDOM: FC Spearman 0.593, SC Spearman 0.662, top10 Jaccard 0.439, sign 0.943
 
 ## H. Faithfulness
 
