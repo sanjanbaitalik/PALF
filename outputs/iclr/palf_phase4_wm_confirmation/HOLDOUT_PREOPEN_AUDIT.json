@@ -1,0 +1,18 @@
+{
+  "n_holdout": 98,
+  "n_dev": 412,
+  "holdout_sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425",
+  "dev_manifest_sha256": "8d4ee9586d78e2f997eaa9ac2ea4abe4d117bf5dec04ec836a89490657b4af6e",
+  "intersection": 0,
+  "prior_sha256": {
+    "matched": "129bc52090b79b766d3ad52634ffbe197b422634e86829787b373c11a3012c12",
+    "cross_task": "379841f12e763df560f263da5cdb2e9520715ffde30488e306a1c686032e4864",
+    "shuffled": "89c273d8662f632e3cba64baf449696a8716c11f2c1d82a9d840b0c77aae46ea",
+    "random": "b91807e4a0f8963ef1be63f4f28b931660831ff12dbc66b2ab8e73642f7a0c18"
+  },
+  "holdout_accessed": false,
+  "fi_holdout_labels_loaded": false,
+  "valid_phase2d_module": "src/metascfc/experiments/prior_subspace_expert_fusion_fix.py",
+  "buggy_phase2d_module_present": true,
+  "status": "PREOPEN_OK"
+}

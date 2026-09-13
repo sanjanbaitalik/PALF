@@ -1,0 +1,9 @@
+{
+  "wm_mean_pearson": 0.26351477359024317,
+  "wm_mean_rmse": 11.292921002711036,
+  "expected_pearson": 0.263515,
+  "expected_rmse": 11.292921,
+  "pass": true,
+  "n_splits": 50,
+  "runtime_seconds": 329.9583728313446
+}

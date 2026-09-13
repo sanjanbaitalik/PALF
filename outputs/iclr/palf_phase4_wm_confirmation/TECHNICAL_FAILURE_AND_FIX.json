@@ -1,0 +1,66 @@
+{
+  "event": "TECHNICAL_FAILURE_BEFORE_ANY_HOLDOUT_OUTCOME",
+  "stage": "holdout",
+  "failure_type": "validator_assertion_shape_bug",
+  "error": "ValueError: operands could not be broadcast together with shapes (1620,) (6670,)",
+  "location": "stage_holdout scaler-equality assertion",
+  "description": "The assertion compared a per-mask expert StandardScaler (length n_selected) against the full-feature development scaler (6670). No holdout outcome, metric, bootstrap, or decision was computed before the crash.",
+  "chronology": {
+    "HOLDOUT_OPEN_TIMESTAMP": "2026-09-13 05:44:42",
+    "holdout_features_loaded": true,
+    "holdout_labels_loaded": true,
+    "holdout_outcomes_or_metrics_computed": false,
+    "model_rankings_thresholds_changed": false
+  },
+  "fix": {
+    "type": "validator_correction_only",
+    "description": "Compare stored per-mask scaler stats against the development scaler restricted to the same mask columns (instead of the full 6670 vector).",
+    "model_changed": false,
+    "config_changed": false,
+    "ranking_changed": false,
+    "statistical_test_changed": false,
+    "thresholds_changed": false,
+    "frozen_script_original_sha256": "9ae5decf3375993960315810e2a91394dc36d13c46d4873f3807780b19387aee",
+    "frozen_script_fixed_sha256": "2c3d67edd36105a417ecdbc7905c677438a9d8236f3e2de2c9ed587738c9bdfb",
+    "snapshot_path": "outputs/iclr/palf_phase4_wm_confirmation/_state/phase4_wm_confirmation_frozen_snapshot.py",
+    "snapshot_sha256": "9ae5decf3375993960315810e2a91394dc36d13c46d4873f3807780b19387aee"
+  },
+  "integrity_note": "The frozen model, rankings, hyperparameters, endpoints, and statistical tests are unchanged. The one-time evaluation is completed once with the corrected validator; all outputs are reported exactly as obtained.",
+  "events": [
+    {
+      "event": "V1_validator_shape_bug",
+      "error": "ValueError shapes (1620,) (6670,)",
+      "fix": "compare stored per-mask scalers to dev scaler restricted to mask columns",
+      "affects_model": false,
+      "affects_results": false
+    },
+    {
+      "event": "V2_final_map_formula_bug",
+      "error": "linear_final_map computed R0 + alpha*expert instead of (1-alpha)*R0 + alpha*expert (missing (1-alpha) scaling of the R0 map and intercept). This inflated the holdout intercept by ~25 points and produced invalid RMSE and delta_r.",
+      "detected_by": "holdout prediction distribution diagnostic (prediction means shifted to 139-151 vs y mean 112)",
+      "fix": "restore the frozen formula final = (1-alpha)*R0 + alpha*(v*FC + (1-v)*SC)",
+      "validation": "map vs closed-form frozen fusion max|diff| = 2.7e-13; alpha=0 reproduces R0 to 3.0e-13",
+      "affects_model": false,
+      "affects_rankings": false,
+      "affects_hyperparameters": false,
+      "affects_thresholds": false,
+      "affects_statistical_tests": false,
+      "affects_results": true,
+      "buggy_outputs_archived": [
+        "_state/buggy_v1_holdout_predictions.csv",
+        "_state/buggy_v1_prediction_inference.json",
+        "_state/buggy_v1_holdout_model_metrics.csv"
+      ],
+      "buggy_v1_delta_r": -0.0138
+    },
+    {
+      "event": "V3_missing_iu_variable",
+      "error": "NameError iu in biomarker perturbation section",
+      "fix": "define iu = np.triu_indices(N_ROI,1) at the start of stage_holdout",
+      "affects_model": false,
+      "affects_results": false
+    }
+  ],
+  "frozen_script_final_sha256": "7f1b9eaaaca792e5b1fde9d948f552a7b7c72006f55c9402a9ed259a4ed82d51",
+  "integrity_statement": "All fixes restore the predeclared frozen computation. No model, mask, hyperparameter, fusion weight, ranking, endpoint, threshold, randomization seed, or statistical test was changed. The buggy first pass is archived and disclosed. The corrected evaluation is reported exactly as obtained, whatever the outcome."
+}

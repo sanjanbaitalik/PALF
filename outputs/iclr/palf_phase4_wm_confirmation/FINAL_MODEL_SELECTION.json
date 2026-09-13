@@ -1,0 +1,97 @@
+{
+  "matched_ncr": {
+    "v": {
+      "fc": 0.65,
+      "sc": 0.35
+    },
+    "alpha": 0.25,
+    "fc_config": [
+      "roi_incident",
+      15,
+      0.1,
+      1.0
+    ],
+    "sc_config": [
+      "roi_incident",
+      5,
+      0.1,
+      1.0
+    ]
+  },
+  "matched_ridge": {
+    "v": {
+      "fc": 0.65,
+      "sc": 0.35
+    },
+    "alpha": 0.25,
+    "fc_config": [
+      "roi_incident",
+      15,
+      1000.0,
+      0.0
+    ],
+    "sc_config": [
+      "roi_incident",
+      5,
+      1000.0,
+      0.0
+    ]
+  },
+  "cross_ncr": {
+    "v": {
+      "fc": 0.75,
+      "sc": 0.25
+    },
+    "alpha": 0.35,
+    "fc_config": [
+      "roi_incident",
+      10,
+      1000.0,
+      0.0
+    ],
+    "sc_config": [
+      "direct_topk",
+      100,
+      1.0,
+      0.1
+    ]
+  },
+  "shuffled_ncr": {
+    "v": {
+      "fc": 0.85,
+      "sc": 0.15000000000000002
+    },
+    "alpha": 0.15,
+    "fc_config": [
+      "roi_incident",
+      15,
+      0.1,
+      0.1
+    ],
+    "sc_config": [
+      "roi_incident",
+      10,
+      10.0,
+      0.1
+    ]
+  },
+  "random_ncr": {
+    "v": {
+      "fc": 1.0,
+      "sc": 0.0
+    },
+    "alpha": 0.2,
+    "fc_config": [
+      "roi_incident",
+      15,
+      0.1,
+      1.0
+    ],
+    "sc_config": [
+      "roi_incident",
+      5,
+      1.0,
+      0.1
+    ]
+  }
+}

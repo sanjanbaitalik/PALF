@@ -1,0 +1,342 @@
+{
+  "git_head": "8a8625d24d21ca311f9ce479a0f297b60198f78f",
+  "working_tree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "environment": {
+    "python": "3.14.6 | packaged by conda-forge | (main, Aug 11 2026, 10:24:17) [GCC 14.4.0]",
+    "numpy": "2.5.3",
+    "platform": "Linux-6.17.0-1029-nvidia-aarch64-with-glibc2.39"
+  },
+  "dev_manifest_sha256": "8d4ee9586d78e2f997eaa9ac2ea4abe4d117bf5dec04ec836a89490657b4af6e",
+  "holdout_manifest_sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425",
+  "wm_prior_sha256": "129bc52090b79b766d3ad52634ffbe197b422634e86829787b373c11a3012c12",
+  "control_prior_sha256": {
+    "matched": "129bc52090b79b766d3ad52634ffbe197b422634e86829787b373c11a3012c12",
+    "cross_task": "379841f12e763df560f263da5cdb2e9520715ffde30488e306a1c686032e4864",
+    "shuffled": "89c273d8662f632e3cba64baf449696a8716c11f2c1d82a9d840b0c77aae46ea",
+    "random": "b91807e4a0f8963ef1be63f4f28b931660831ff12dbc66b2ab8e73642f7a0c18"
+  },
+  "r0_code_sha256": "a466bc3f990d981cdece64b735542bfddcdc5696cdf7980107a4b9d01ab0b387",
+  "phase2d_fix_code_sha256": "2f52052fa97bd3300a32c6fe0f33203ea30489e9741b405780200a222bb9c70f",
+  "ncr_code_sha256": "2a0f93aa108af60ad6b53a7926beaea29c3dfad93ab653de6afc2674618e8018",
+  "phase4_code_sha256": "9ae5decf3375993960315810e2a91394dc36d13c46d4873f3807780b19387aee",
+  "finalization_cv_seeds": [
+    6161,
+    6262,
+    6363
+  ],
+  "folds": 5,
+  "selected_models": {
+    "matched_ncr": {
+      "v": {
+        "fc": 0.65,
+        "sc": 0.35
+      },
+      "alpha": 0.25,
+      "fc_config": [
+        "roi_incident",
+        15,
+        0.1,
+        1.0
+      ],
+      "sc_config": [
+        "roi_incident",
+        5,
+        0.1,
+        1.0
+      ]
+    },
+    "matched_ridge": {
+      "v": {
+        "fc": 0.65,
+        "sc": 0.35
+      },
+      "alpha": 0.25,
+      "fc_config": [
+        "roi_incident",
+        15,
+        1000.0,
+        0.0
+      ],
+      "sc_config": [
+        "roi_incident",
+        5,
+        1000.0,
+        0.0
+      ]
+    },
+    "cross_ncr": {
+      "v": {
+        "fc": 0.75,
+        "sc": 0.25
+      },
+      "alpha": 0.35,
+      "fc_config": [
+        "roi_incident",
+        10,
+        1000.0,
+        0.0
+      ],
+      "sc_config": [
+        "direct_topk",
+        100,
+        1.0,
+        0.1
+      ]
+    },
+    "shuffled_ncr": {
+      "v": {
+        "fc": 0.85,
+        "sc": 0.15000000000000002
+      },
+      "alpha": 0.15,
+      "fc_config": [
+        "roi_incident",
+        15,
+        0.1,
+        0.1
+      ],
+      "sc_config": [
+        "roi_incident",
+        10,
+        10.0,
+        0.1
+      ]
+    },
+    "random_ncr": {
+      "v": {
+        "fc": 1.0,
+        "sc": 0.0
+      },
+      "alpha": 0.2,
+      "fc_config": [
+        "roi_incident",
+        15,
+        0.1,
+        1.0
+      ],
+      "sc_config": [
+        "roi_incident",
+        5,
+        1.0,
+        0.1
+      ]
+    }
+  },
+  "biomarker_ranking_sha256": "990ac6a2ee1752b5f3662d7718a52e3e3fe5b36bd8078a11be49fed800fd7412",
+  "frozen_roi_sets": {
+    "matched": {
+      "top5": [
+        6,
+        7,
+        3,
+        2,
+        59
+      ],
+      "top10": [
+        6,
+        7,
+        3,
+        2,
+        59,
+        64,
+        63,
+        80,
+        11,
+        60
+      ],
+      "bottom5": [
+        37,
+        82,
+        49,
+        47,
+        38
+      ],
+      "bottom10": [
+        25,
+        93,
+        85,
+        87,
+        46,
+        37,
+        82,
+        49,
+        47,
+        38
+      ]
+    },
+    "cross_task": {
+      "top5": [
+        64,
+        65,
+        58,
+        63,
+        2
+      ],
+      "top10": [
+        64,
+        65,
+        58,
+        63,
+        2,
+        7,
+        6,
+        62,
+        59,
+        3
+      ],
+      "bottom5": [
+        82,
+        114,
+        48,
+        46,
+        49
+      ],
+      "bottom10": [
+        37,
+        44,
+        47,
+        36,
+        38,
+        82,
+        114,
+        48,
+        46,
+        49
+      ]
+    },
+    "shuffled": {
+      "top5": [
+        78,
+        15,
+        89,
+        95,
+        113
+      ],
+      "top10": [
+        78,
+        15,
+        89,
+        95,
+        113,
+        103,
+        52,
+        38,
+        18,
+        80
+      ],
+      "bottom5": [
+        3,
+        16,
+        42,
+        48,
+        19
+      ],
+      "bottom10": [
+        100,
+        46,
+        34,
+        30,
+        47,
+        3,
+        16,
+        42,
+        48,
+        19
+      ]
+    },
+    "random": {
+      "top5": [
+        101,
+        32,
+        23,
+        74,
+        104
+      ],
+      "top10": [
+        101,
+        32,
+        23,
+        74,
+        104,
+        84,
+        65,
+        26,
+        92,
+        59
+      ],
+      "bottom5": [
+        14,
+        109,
+        44,
+        55,
+        72
+      ],
+      "bottom10": [
+        36,
+        48,
+        47,
+        6,
+        16,
+        14,
+        109,
+        44,
+        55,
+        72
+      ]
+    },
+    "matched_ridge": {
+      "top5": [
+        7,
+        2,
+        6,
+        3,
+        59
+      ],
+      "top10": [
+        7,
+        2,
+        6,
+        3,
+        59,
+        64,
+        65,
+        58,
+        63,
+        80
+      ],
+      "bottom5": [
+        87,
+        48,
+        49,
+        46,
+        38
+      ],
+      "bottom10": [
+        37,
+        82,
+        16,
+        36,
+        47,
+        87,
+        48,
+        49,
+        46,
+        38
+      ]
+    }
+  },
+  "random_perturbation_seeds": {
+    "random10": 9201,
+    "random5": 9202
+  },
+  "bootstrap_seeds": {
+    "prediction": 9101,
+    "biomarker": 9301
+  },
+  "primary_endpoints": {
+    "prediction": "delta_r = r_matched_ncr - r_R0; PASS if delta_r >= +0.005 and one-sided 95% bootstrap lower bound > 0",
+    "biomarker": "delta_RMSE_top10 > 0 and > mean(random10) and empirical p < 0.05"
+  },
+  "runtime_estimate_path": "outputs/iclr/palf_phase4_wm_confirmation/RUNTIME_ESTIMATE.md",
+  "timestamp": "2026-09-13 05:40:41"
+}

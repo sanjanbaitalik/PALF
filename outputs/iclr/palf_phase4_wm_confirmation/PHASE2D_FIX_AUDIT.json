@@ -1,0 +1,36 @@
+{
+  "valid_module_path": "/home/genaicoe/Documents/Sanjan/iclr/metaSFC_extends/src/metascfc/experiments/prior_subspace_expert_fusion_fix.py",
+  "uses_fix_module": true,
+  "K_EDGE_GRID": [
+    100,
+    300,
+    600,
+    1200
+  ],
+  "M_ROI_GRID": [
+    5,
+    10,
+    15
+  ],
+  "RIDGE_EXPERT_GRID": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "LAPLACIAN_RATIO_GRID": [
+    0.0,
+    0.1,
+    0.3,
+    1.0
+  ],
+  "ratio0_equals_ridge_max_abs_err": 0.0,
+  "ratio0_pass": true,
+  "alpha0_equals_r0": true,
+  "expert_reconstruction_max_err": 2.842170943040401e-14,
+  "reconstruction_pass": true,
+  "status": "PASS"
+}

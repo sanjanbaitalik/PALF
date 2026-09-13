@@ -1,0 +1,10 @@
+{
+  "freeze_sha_verifies": true,
+  "ready_marker": true,
+  "ranking_frozen": true,
+  "ranking_rows_116": true,
+  "holdout_txt_sha": true,
+  "synthetic_positive_delta": true,
+  "sign_convention": "RMSE_masked - RMSE_unmasked; positive=faithful",
+  "status": "PASS"
+}

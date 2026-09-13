@@ -1,0 +1,32 @@
+{
+  "unmasked_rmse": 11.610511530660556,
+  "top10_delta_rmse": -0.37981859784576244,
+  "top5_delta_rmse": -0.04361207884209506,
+  "bottom5_delta_rmse": -0.14940707065255943,
+  "bottom10_delta_rmse": -0.08550488140160972,
+  "random10_mean": 0.019094595808495086,
+  "random10_median": -0.0605338966775264,
+  "random10_p95": 0.8599469263522742,
+  "random10_fraction_ge_top": 0.868,
+  "empirical_p_top10": 0.8681318681318682,
+  "random5_mean": 0.011614241401861613,
+  "empirical_p_top5": 0.5104895104895105,
+  "gate_pass": false,
+  "sign_convention": "delta_RMSE = RMSE_masked - RMSE_unmasked; positive = faithful",
+  "ranking_controls": {
+    "matched": -0.37981859784576244,
+    "cross_task": 0.27516163866038923,
+    "shuffled": 0.6467367303317921,
+    "random": 0.7318655048585505,
+    "matched_ridge": 0.22608151362707574
+  },
+  "bootstrap_sensitivity": {
+    "mean": -0.3944922883399599,
+    "ci95": [
+      -0.598564632770953,
+      -0.19916024932930249
+    ],
+    "lower_one_sided": -0.598564632770953,
+    "fraction_le_0": 0.9992
+  }
+}

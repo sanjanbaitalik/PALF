@@ -1,0 +1,72 @@
+{
+  "PREDICTION_CONFIRMATION": "FAIL",
+  "BIOMARKER_CONFIRMATION": "FAIL",
+  "PHASE4_DECISION": "WM_CONFIRMATION_FAILED",
+  "primary": {
+    "delta_r_observed": -0.01797218775152995,
+    "delta_r_lower_one_sided": -0.04423012551640053,
+    "top10_delta_rmse": -0.37981859784576244,
+    "empirical_p": 0.8681318681318682
+  },
+  "technical_failure_disclosure": "All fixes restore the predeclared frozen computation. No model, mask, hyperparameter, fusion weight, ranking, endpoint, threshold, randomization seed, or statistical test was changed. The buggy first pass is archived and disclosed. The corrected evaluation is reported exactly as obtained, whatever the outcome.",
+  "technical_failures": [
+    "V1_validator_shape_bug",
+    "V2_final_map_formula_bug",
+    "V3_missing_iu_variable"
+  ],
+  "holdout_model_metrics": [
+    {
+      "model": "R0",
+      "pearson": 0.1963579106418456,
+      "rmse": 11.578882285454634,
+      "mae": 9.626417921753118
+    },
+    {
+      "model": "matched_ridge",
+      "pearson": 0.1897676091738659,
+      "rmse": 11.52745360267878,
+      "mae": 9.52987121210738
+    },
+    {
+      "model": "matched_ncr",
+      "pearson": 0.1783857228903156,
+      "rmse": 11.610511530660556,
+      "mae": 9.625822808837032
+    },
+    {
+      "model": "cross_ncr",
+      "pearson": 0.1971940116455454,
+      "rmse": 11.461659350269736,
+      "mae": 9.45103075284309
+    },
+    {
+      "model": "shuffled_ncr",
+      "pearson": 0.2032839890057612,
+      "rmse": 11.534141220123582,
+      "mae": 9.628174156224944
+    },
+    {
+      "model": "random_ncr",
+      "pearson": 0.1965011555953877,
+      "rmse": 11.585026975386528,
+      "mae": 9.655215554951209
+    }
+  ],
+  "biomarker_summary": {
+    "unmasked_rmse": 11.610511530660556,
+    "top10_delta_rmse": -0.37981859784576244,
+    "top5_delta_rmse": -0.04361207884209506,
+    "bottom5_delta_rmse": -0.14940707065255943,
+    "bottom10_delta_rmse": -0.08550488140160972,
+    "random10_mean": 0.019094595808495086,
+    "random10_median": -0.0605338966775264,
+    "random10_p95": 0.8599469263522742,
+    "random10_fraction_ge_top": 0.868,
+    "empirical_p_top10": 0.8681318681318682,
+    "random5_mean": 0.011614241401861613,
+    "empirical_p_top5": 0.5104895104895105,
+    "gate_pass": false,
+    "sign_convention": "delta_RMSE = RMSE_masked - RMSE_unmasked; positive = faithful"
+  },
+  "timestamp": "2026-09-13 05:48:46"
+}
