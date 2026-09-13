@@ -1,0 +1,14 @@
+{
+  "decision": "NO_SAMPLE_SIZE_GAIN",
+  "paper_ready_trigger": false,
+  "n_models": 18,
+  "n_models_positive_observed": 0,
+  "best_observed": {
+    "target": "WM",
+    "model": "A0",
+    "delta_r": -0.0063744470915001
+  },
+  "claim_boundary": "post-hoc combined-cohort exploratory analysis; NOT independent validation",
+  "holdout_note": "the 98 subjects were opened in Phase 4 and are not a holdout in this analysis",
+  "phase4_result_preserved": true
+}

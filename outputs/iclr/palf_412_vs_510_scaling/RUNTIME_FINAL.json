@@ -1,0 +1,30 @@
+{
+  "stages": {
+    "Stage0_integrity": {
+      "elapsed_seconds": 620.0,
+      "estimated_remaining_seconds": 19993.8,
+      "percent_complete": 3,
+      "timestamp": "2026-09-13 06:41:44"
+    },
+    "Stage1_primary": {
+      "elapsed_seconds": 18280.4,
+      "estimated_remaining_seconds": 0.0,
+      "percent_complete": 50.0,
+      "timestamp": "2026-09-13 11:48:23"
+    },
+    "Stage4_5_biomarkers": {
+      "elapsed_seconds": 13.2,
+      "estimated_remaining_seconds": 0,
+      "percent_complete": 90,
+      "timestamp": "2026-09-13 11:50:29"
+    },
+    "Stage3_learning": {
+      "elapsed_seconds": 8354.7,
+      "estimated_remaining_seconds": 0,
+      "percent_complete": 55,
+      "timestamp": "2026-09-13 14:10:03"
+    }
+  },
+  "report_runtime_seconds": 35.22307109832764,
+  "paper_ready_trigger": false
+}

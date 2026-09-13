@@ -1,0 +1,23 @@
+{
+  "details": {
+    "WM": {
+      "r": 0.2635147735902438,
+      "rmse": 11.29292100271103,
+      "expected_r": 0.263515,
+      "expected_rmse": 11.292921,
+      "pass": true
+    },
+    "FI": {
+      "r": 0.37091733496956053,
+      "rmse": 4.566689193658603,
+      "expected_r": 0.370917,
+      "expected_rmse": 4.566689,
+      "pass": true
+    }
+  },
+  "status": "PASS",
+  "tolerance": {
+    "pearson": 0.0005,
+    "rmse": 0.05
+  }
+}

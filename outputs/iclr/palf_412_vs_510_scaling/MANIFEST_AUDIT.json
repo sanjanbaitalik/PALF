@@ -1,0 +1,20 @@
+{
+  "D412": {
+    "n": 412,
+    "sha256": "8d4ee9586d78e2f997eaa9ac2ea4abe4d117bf5dec04ec836a89490657b4af6e"
+  },
+  "D98": {
+    "n": 98,
+    "sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425"
+  },
+  "D510": {
+    "n": 510,
+    "sha256": "070188ff3a060b9003160b343c74db10fb51b243b43d77feaf126c80ccb62ca2"
+  },
+  "historical_98_canonical_sha256": "89c563602778a0a2618e4b94245c3cd1b8058f0ef4e6248b6a294bfd4176c425",
+  "disjoint": true,
+  "union_exact": true,
+  "claim_boundary": "post-hoc combined-cohort exploratory analysis; NOT independent validation",
+  "phase4_result_preserved": true,
+  "timestamp": "2026-09-13 06:31:24"
+}
